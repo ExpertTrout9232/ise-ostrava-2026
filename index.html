@@ -3,14 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ISE Ostrava 2026</title>
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url('fonts/SourceSans3-Regular.ttf');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url('fonts/SourceSans3-Medium.ttf');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url('fonts/SourceSans3-SemiBold.ttf');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Source Sans 3';
+            src: url('fonts/SourceSans3-Italic.ttf');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @theme {
+            --font-sans: 'Source Sans 3';
+
+            @keyframes darken {
+                from {background-color: rgba(0,0,0,0);}
+                to {background-color: rgba(0,0,0,0.3);}
+            }
+            --animate-darken: darken 0.8s ease-out forwards;
+
+            @keyframes fade-in-up {
+                from {opacity: 0; transform: translateY(20px);}
+                to {opacity: 1; transform: translateY(0);}
+            }
+            --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+
+            @keyframes fade-in-down {
+                from {opacity: 0; transform: translateY(-20px);}
+                to {opacity: 1; transform: translateY(0);}
+            }
+            --animate-fade-in-down: fade-in-down 0.5s ease-out forwards;
+        }
+
+        @layer base {
+            html {scroll-behavior: smooth;}
+            body {@apply font-sans;}
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="fixed inset-0 z-0">
+        <img src="images/ostrava.webp" class="w-full h-full object-cover" alt="Background">
+        <div class="absolute inset-0 animate-darken"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full h-20 bg-white z-50 text-black px-15 opacity-0 animate-fade-in-down [animation-delay:0.6s]">
+        <div class="flex justify-between items-center h-full w-full">
+            <div class="flex items-center gap-8">
+                <div class="w-10 h-10 bg-red-500">LOG</div>
+                <span class="font-medium text-[21px]/[28px]">ISE Ostrava 2026</span>
+            </div>
+
+            <div class="flex gap-15 text-[20px]/[28px] font-regular">
+                <a class="grid grid-cols-1 grid-rows-1 place-items-center group">
+                    <span class="col-start-1 row-start-1 font-semibold invisible">Program</span>
+                    <span class="col-start-1 row-start-1 font-regular group-hover:font-semibold transition-all">Program</span>
+                </a>
+                <a class="grid grid-cols-1 grid-rows-1 place-items-center group">
+                    <span class="col-start-1 row-start-1 font-semibold invisible">Registration</span>
+                    <span class="col-start-1 row-start-1 font-regular group-hover:font-semibold transition-all">Registration</span>
+                </a>
+                <a class="grid grid-cols-1 grid-rows-1 place-items-center group">
+                    <span class="col-start-1 row-start-1 font-semibold invisible">Venue</span>
+                    <span class="col-start-1 row-start-1 font-regular group-hover:font-semibold transition-all">Venue</span>
+                </a>
+                <a class="grid grid-cols-1 grid-rows-1 place-items-center group">
+                    <span class="col-start-1 row-start-1 font-semibold invisible">Sponsors</span>
+                    <span class="col-start-1 row-start-1 font-regular group-hover:font-semibold transition-all">Sponsors</span>
+                </a>
+                <a class="grid grid-cols-1 grid-rows-1 place-items-center group">
+                    <span class="col-start-1 row-start-1 font-semibold invisible">Travel Grant</span>
+                    <span class="col-start-1 row-start-1 font-regular group-hover:font-semibold transition-all">Travel Grant</span>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="relative z-10">
+        <section class="h-screen flex items-center justify-center relative">
+            <h1 class="text-[72px]/[28px] font-semibold text-white opacity-0 animate-fade-in-up [animation-delay:0.3s]">
+                ISE Ostrava 2026
+            </h1>
+
+            <a href="#content" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white hover:text-[#00B497] transition-all duration-300 opacity-0 animate-fade-in-up [animation-delay:0.8s]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 animate-bounce">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                </svg>
+            </a>
+        </section>
+
+        <section id="content" class="bg-white min-h-screen py-20">
+            <div class="w-[640px] mx-auto text-[20px]/[28px] tracking-normal">
+                <p class="mb-20">The Symposium of the International Society of Endocytobiology ISE 2026 will take place from <span class="font-semibold">September 14-18</span>, at the University of Ostrava.</p>
+
+                <h2 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">PROGRAM & FORMAT</h2>
+                
+                <p class="mb-6">The final program will depend on the number of participants and <span class="font-semibold">will be announced after the registration deadline.</span></p>
+                <p class="mb-20">Please note that the meeting is scheduled to take place <span class="font-semibold">in person only.</span> Streaming of presentations will not be available.</p>
+                
+                <h2 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">EARLY CAREER PRIZES</h2>
+                
+                <p class="mb-6">During the symposium, two prizes will be awarded among participating early career scientists (students and postdocs within the first four years after obtaining their degree):</p>
+                <p><span class="font-semibold">ISE Prize</span> for an outstanding oral presentation</p>
+                <p class="mb-20"><span class="font-semibold">Peter-Sitte Prize</span> for an outstanding poster presentation</p>
+                
+                <h2 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">ORGANIZER</h2>
+                
+                <p><span class="font-semibold">Prof. Dr. Margarete Baier</span></p>
+                <p>Freie Universität Berlin</p>
+                <p>Pflanzenphysiologie</p>
+                <p>Königin-Luise-Straße 12-16</p>
+                <p>D-14195 Berlin, Germany</p>
+                <p class="mb-20">Phone: +49-30-838-53813</p>
+
+                <h2 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">CONFIRMED SPEAKERS</h2>
+
+                <p class="font-semibold text-[20px]/[30px]">Kateřina Bišová</p>
+                <p class="italic mb-6">Centre Algatech, Czech Academy of Sciences, Czech Republic</p>
+
+                <p class="font-semibold text-[20px]/[30px]">Ralph Bock</p>
+                <p class="italic mb-6">Max Planck Institute for Molecular Plant Physiology, Germany</p>
+
+                <p class="font-semibold text-[20px]/[30px]">Lenka Caisová</p>
+                <p class="italic mb-6">Institute of Plant Molecular Biology, Czech Academy of Sciences, Czech Republic</p>
+
+                <p class="font-semibold text-[20px]/[30px]">Marek Eliáš</p>
+                <p class="italic mb-20">University of Ostrava, Czech Republic</p>
+
+                <a class="mb-6 inline-flex items-center justify-center font-semibold text-[18px]/[28px] tracking-wide h-13 px-14 border-[2px] border-[#00B497] text-[#00B497]">GET IN TOUCH</a>
+            </div>
+        </section>
+
+        <footer class="bg-gray-200 h-20">
+            <div class="h-full flex items-center justify-center text-[20px]/[28px] text-gray-600">
+                [footer placeholder]
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
