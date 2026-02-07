@@ -63,6 +63,12 @@
                 to {opacity: 1; transform: translateY(0);}
             }
             --animate-fade-in-down: fade-in-down 0.5s ease-out forwards;
+
+            @keyframes fade-in {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+            --animate-fade-in: fade-in 0.5s ease-out forwards;
         }
 
         @layer base {
@@ -80,7 +86,7 @@
     </div>
 
     <div class="fixed inset-0 z-0">
-        <img src="images/ostrava.webp" class="w-full h-full object-cover" alt="Background">
+        <img src="images/osu.webp" class="w-full h-1/2 object-cover" alt="Background">
         <div class="absolute inset-0 animate-darken"></div>
     </div>
 
@@ -121,13 +127,10 @@
     </nav>
 
     <div class="relative z-10">
-        <section class="h-screen flex items-center justify-center relative flex-col">
+        <section class="h-[50vh] flex items-center justify-center relative flex-col">
             <h1 class="text-[72px]/[80px] font-semibold text-white opacity-0 animate-fade-in-up [animation-delay:0.2s]">
-                ISE 2026 Ostrava
+                Venue
             </h1>
-            <h2 class="text-[36px]/[44px] font-regular text-white opacity-0 animate-fade-in-up [animation-delay:0.3s]">
-                Czech Republic &nbsp;|&nbsp; September 14th to 18th
-            </h2>
             
             <a href="#content" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white hover:text-[#00B497] transition-all duration-300 opacity-0 animate-fade-in-up [animation-delay:0.7s]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 animate-bounce">
@@ -137,66 +140,21 @@
         </section>
 
         <section id="content" class="bg-white min-h-screen py-20">
-            <div class="w-[640px] mx-auto text-[20px]/[28px] tracking-normal text-justify">
-                <p class="mb-20 text-center">We are excited to announce <br><span class="font-semibold">The 16th International Colloquium on Endocytobiology and Symbiosis</span></p>
-                    
-                <p class="mb-6">Following the previous meeting of this series, held in 2023 in Chicago, we are now moving to Central Europe&mdash;specifically to a city located exactly on (and divided by) the historical border between Moravia and Silesia. The meeting will cover diverse aspects of the biology of endosymbionts, organelles, and related topics. Therefore, if you work in these fields or are simply curious about them, do not hesitate to join us.</p>
+            <div class="w-[640px] mx-auto text-[20px]/[28px] tracking-normal text-justify opacity-0 animate-fade-in [animation-delay:0.3s]">
+                <p class="mb-20">The meeting will take place at the Faculty of Science, University of Ostrava, located in the district of Silesian Ostrava. The welcome party on the first evening, as well as all lectures and coffee breaks, will be held in the same building (see photo). The venue is within walking distance of the city centre of Ostrava, where most hotels are located, and is also easily accessible from various parts of the city by several bus and trolleybus lines (see details below).</p>
 
-                <div class="mb-6 relative">
-                    <div class="absolute left-full ml-16 top-0 w-max flex flex-col items-center">
-                        <img src="images/karel-sulc.webp" class="rounded-lg shadow-md mb-2 w-[142.19px]" alt="Karel Šulc">
-                        <span class="text-[12px]/[18px] text-gray-600 italic">Karel Šulc (1872-1952)</span>
-                    </div>
+                <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">HOW TO GET TO OSTRAVA</h3>
 
-                    <p>The meeting will have two special features. First, it will commemorate the Czech biologist <span class="font-semibold">Karel Šulc.</span> He spent the first two decades of the 20th century in (what is now) Ostrava, working as a physician while, in his spare time, investigating the microanatomy of insects. This research led him to the discovery of endosymbionts in some insect species such as cicadas. He was twice nominated for the Nobel Prize, and the extensively studied endosymbiotic bacterium <span class="italic">Candidatus</span> Karelsulcia was named in his honour, underscoring the significance of his scientific achievements.</p>
-                </div>
-                
-                <div class="mb-20 relative">
-                    <div class="absolute left-full ml-16 top-0 w-max flex flex-col items-center">
-                        <img src="images/gregor-mendel.webp" class="rounded-lg shadow-md mb-2 w-[142.19px]" alt="Gregor Mendel">
-                        <span class="text-[12px]/[18px] text-gray-600 italic">Gregor Mendel (1822-1884)</span>
-                    </div>
+                <p class="mb-6">Participants travelling from abroad may find it most convenient to first travel to one of the following major cities, all of which are connected to Ostrava by regular direct train services:</p>
+                <ul class="mb-6 list-disc list-outside ml-8 marker:text-[#00B497]">
+                    <li class="mb-6 pl-2"><span class="font-semibold">Prague</span> &ndash; approximately 3 hours by train from Prague Main Station; many direct trains per day</li>
+                    <li class="mb-6 pl-2"><span class="font-semibold">Vienna</span> &ndash; approximately 3 hours by train from Vienna Main Station; direct trains every two hours (less frequently at weekends)</li>
+                    <li class="mb-6 pl-2"><span class="font-semibold">Cracow</span> &ndash; 2.5 to 3 hours (depending on the train) from Cracow Main Station; several direct trains per day</li>
+                </ul>
 
-                    <p>Second, the conference dinner will be held in the village of Hynčice near Ostrava, at <a class="font-medium text-[#00B497] underline underline-offset-4 transition-colors duration-300 hover:text-[#00806a]" href="https://www.mendelrodnydum.cz/en/" target="_blank">a beautiful estate</a> where <span class="font-semibold">Gregor Mendel</span> was born and raised. We believe that many biologists may welcome the opportunity to make a pilgrimage to this remarkable place!</p>
-                </div>
+                <p class="mb-20">Other options include flying to Bratislava (Slovakia) or Katowice (Poland) and continuing to Ostrava by bus or train. In addition, Ostrava has <a class="font-medium text-[#00B497] underline underline-offset-4 transition-colors duration-300 hover:text-[#00806a]" href="https://www.airport-ostrava.cz/en/" target="_blank">a small airport located close to the city</a> with direct flights from a limited number of destinations, notably including London Stansted, Girona, and Warsaw.</p>
 
-                <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">PROGRAM & FORMAT</h3>
-                
-                <p class="mb-6">The final program will depend on the number of participants and <span class="font-semibold">will be announced after the registration deadline.</span></p>
-                <p class="mb-20">Please note that the meeting is scheduled to take place <span class="font-semibold">in person only.</span> Streaming of presentations will not be available.</p>
-                
-                <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">EARLY CAREER PRIZES</h3>
-                
-                <p class="mb-6">During the symposium, two prizes will be awarded among participating early career scientists (students and postdocs within the first four years after obtaining their degree):</p>
-                <p><span class="font-semibold">ISE Prize</span> for an outstanding oral presentation</p>
-                <p class="mb-20"><span class="font-semibold">Peter-Sitte Prize</span> for an outstanding poster presentation</p>
-                
-                <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">ORGANIZER</h3>
-                
-                <p class="font-semibold">Marek Eliáš</p>
-                <p>University of Ostrava</p>
-                <p>Faculty of Science, Department of Biology and Ecology</p>
-                <p>Chittussiho 10, 710 00 Ostrava</p>
-                <p>Czech Republic</p>
-                <p class="mb-20">Email: marekelias1978@gmail.com</p>
-
-                <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">CONFIRMED SPEAKERS</h3>
-
-                <p class="italic text-[20px]/[30px] mb-20">To be announced.</p>
-
-                <!-- <p class="font-semibold text-[20px]/[30px]">Kateřina Bišová</p>
-                <p class="italic text-[20px]/[30px] mb-6">Centre Algatech, Czech Academy of Sciences, Czech Republic</p>
-
-                <p class="font-semibold text-[20px]/[30px]">Ralph Bock</p>
-                <p class="italic text-[20px]/[30px] mb-6">Max Planck Institute for Molecular Plant Physiology, Germany</p>
-
-                <p class="font-semibold text-[20px]/[30px]">Lenka Caisová</p>
-                <p class="italic text-[20px]/[30px] mb-6">Institute of Plant Molecular Biology, Czech Academy of Sciences, Czech Republic</p>
-
-                <p class="font-semibold text-[20px]/[30px]">Marek Eliáš</p>
-                <p class="italic text-[20px]/[30px] mb-20">University of Ostrava, Czech Republic</p> -->
-
-                <a class="mb-6 inline-flex items-center justify-center font-semibold text-[18px]/[28px] tracking-wide h-13 px-14 border-[2px] border-[#00B497] text-[#00B497]">GET IN TOUCH</a>
+                <p class="mb-6">We will be happy to help you find the best travel option from your location—please feel free to contact us at any of the following email addresses: <a class="font-medium text-[#00B497] underline underline-offset-4 transition-colors duration-300 hover:text-[#00806a]" href="mailto:katerina.sedlakova@osu.cz">katerina.sedlakova@osu.cz</a> and <a class="font-medium text-[#00B497] underline underline-offset-4 transition-colors duration-300 hover:text-[#00806a]" href="mailto:tereza.mlcuchova@osu.cz">tereza.mlcuchova@osu.cz</a>.</p>
             </div>
         </section>
 
