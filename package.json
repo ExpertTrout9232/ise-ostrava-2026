@@ -1,0 +1,32 @@
+{
+  "name": "ise-ostrava-2026",
+  "version": "0.1.0",
+  "description": "Official web of the ISE 2026 Ostrava conference.",
+  "private": true,
+  "author": "ExpertTrout9232 <ExpertTrout9232@protonmail.com>",
+  "license": "GPL-3.0",
+  "type": "module",
+  "homepage": "https://experttrout9232.github.io/ise-ostrava-2026",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExpertTrout9232/ise-ostrava-2026.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ExpertTrout9232/ise-ostrava-2026/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify",
+    "format": "prettier --write \"src/**/*.html\""
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.18"
+  }
+}

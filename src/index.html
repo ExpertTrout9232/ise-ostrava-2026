@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>ISE 2026 Ostrava</title>
+        <meta name="description" content="Official web for the ISE 2026 Ostrava conference." />
+
+        <link rel="preload" href="./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin />
+
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <link href="./output.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- * Remove later-->
+        <div class="fixed inset-0 z-100 flex h-8 items-center justify-center bg-black/42" id="dev-banner">
+            <div class="px-8 text-center text-4xl font-semibold text-white">In development, everything is subject to change</div>
+        </div>
+
+        <div class="fixed inset-0 z-0">
+            <img src="images/ostrava.webp" class="h-full w-full object-cover" alt="Background" />
+            <div class="animate-darken absolute inset-0"></div>
+        </div>
+
+        <nav class="animate-fade-in-down fixed top-0 left-0 z-50 h-20 w-full bg-white px-15 text-black opacity-0 [animation-delay:0.5s]">
+            <div class="flex h-full w-full items-center justify-between">
+                <div class="flex items-center gap-5">
+                    <img src="images/logo.jpg" alt="Logo" class="h-11 object-contain" />
+                    <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center text-[21px]/[28px]">
+                        <span class="col-start-1 row-start-1 font-medium transition-opacity duration-300 group-hover:opacity-0">ISE 2026 Ostrava</span>
+                        <span class="col-start-1 row-start-1 font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100">ISE 2026 Ostrava</span>
+                    </a>
+                </div>
+
+                <div class="font-regular flex gap-11 text-[20px]/[28px]">
+                    <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+                        <span class="invisible col-start-1 row-start-1 font-semibold">Home</span>
+                        <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Home</span>
+                    </a>
+                    <a href="./program.html#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+                        <span class="invisible col-start-1 row-start-1 font-semibold">Program</span>
+                        <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Program</span>
+                    </a>
+                    <a href="./registration.html#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+                        <span class="invisible col-start-1 row-start-1 font-semibold">Registration</span>
+                        <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Registration</span>
+                    </a>
+                    <a href="./venue.html#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+                        <span class="invisible col-start-1 row-start-1 font-semibold">Venue</span>
+                        <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Venue</span>
+                    </a>
+                    <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+                        <span class="invisible col-start-1 row-start-1 font-semibold">Sponsors</span>
+                        <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Sponsors</span>
+                    </a>
+                    <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+                        <span class="invisible col-start-1 row-start-1 font-semibold">Travel Grant</span>
+                        <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Travel Grant</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="relative z-10">
+            <section class="relative flex h-screen flex-col items-center justify-center">
+                <h1 class="animate-fade-in-up text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]">ISE 2026 Ostrava</h1>
+                <h2 class="font-regular animate-fade-in-up text-[36px]/[44px] text-white opacity-0 [animation-delay:0.3s]">Czech Republic &nbsp;|&nbsp; September 14th to 18th</h2>
+
+                <a href="#content" class="animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-12 w-12 animate-bounce">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                    </svg>
+                </a>
+            </section>
+
+            <section id="content" class="min-h-screen bg-white py-20">
+                <div class="animate-fade-in mx-auto max-w-[688px] px-6 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 [animation-delay:0.3s]">
+                    <p class="mb-20 text-center">
+                        We are excited to announce
+                        <br />
+                        <strong class="font-semibold">The 16th International Colloquium on Endocytobiology and Symbiosis</strong>
+                    </p>
+
+                    <p class="mb-6">Following the previous meeting of this series, held in 2023 in Chicago, we are now moving to Central Europe&mdash;specifically to a city located exactly on (and divided by) the historical border between Moravia and Silesia. The meeting will cover diverse aspects of the biology of endosymbionts, organelles, and related topics. Therefore, if you work in these fields or are simply curious about them, do not hesitate to join us.</p>
+
+                    <div class="relative mb-6">
+                        <div class="absolute top-0 left-full ml-16 flex w-max flex-col items-center">
+                            <img src="images/karel-sulc.webp" class="mb-2 w-[142.19px] rounded-lg shadow-md" alt="Karel Šulc" />
+                            <span class="text-[12px]/[18px] text-gray-600 italic">Karel Šulc (1872-1952)</span>
+                        </div>
+
+                        <p>
+                            The meeting will have two special features. First, it will commemorate the Czech biologist
+                            <strong class="font-semibold">Karel Šulc</strong>
+                            . He spent the first two decades of the 20th century in (what is now) Ostrava, working as a physician while, in his spare time, investigating the microanatomy of insects. This research led him to the discovery of endosymbionts in some insect species such as cicadas. He was twice nominated for the Nobel Prize, and the extensively studied endosymbiotic bacterium
+                            <span class="italic">Candidatus</span>
+                            Karelsulcia was named in his honour, underscoring the significance of his scientific achievements.
+                        </p>
+                    </div>
+
+                    <div class="relative mb-20">
+                        <div class="absolute top-0 left-full ml-16 flex w-max flex-col items-center">
+                            <img src="images/gregor-mendel.webp" class="mb-2 w-[142.19px] rounded-lg shadow-md" alt="Gregor Mendel" />
+                            <span class="text-[12px]/[18px] text-gray-600 italic">Gregor Mendel (1822-1884)</span>
+                        </div>
+
+                        <p>
+                            Second, the conference dinner will be held in the village of Hynčice near Ostrava, at
+                            <a class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]" href="https://www.mendelrodnydum.cz/en/" target="_blank">a beautiful estate</a>
+                            where
+                            <strong class="font-semibold">Gregor Mendel</strong>
+                            was born and raised. We believe that many biologists may welcome the opportunity to make a pilgrimage to this remarkable place!
+                        </p>
+                    </div>
+
+                    <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">CONFIRMED SPEAKERS</h3>
+
+                    <a href="https://symbio.eko.uj.edu.pl/en_GB/staff/piotr-lukasik" target="_blank" class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold">
+                        <span>Piotr Łukasik</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                    </a>
+                    <p class="mb-20 text-[19px]/[32px] italic">Jagiellonian University, Kraków, Poland</p>
+
+                    <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">PROGRAM & FORMAT</h3>
+
+                    <p class="mb-6">
+                        The final program will depend on the number of participants and
+                        <strong class="font-semibold">will be announced after the registration deadline.</strong>
+                    </p>
+                    <p class="mb-20">
+                        Please note that the meeting is scheduled to take place
+                        <strong class="font-semibold">in person only</strong>
+                        . Streaming of presentations will not be available.
+                    </p>
+
+                    <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">EARLY CAREER PRIZES</h3>
+
+                    <p class="mb-6">During the symposium, two prizes will be awarded among participating early career scientists (students and postdocs within the first four years after obtaining their degree):</p>
+                    <p>
+                        <strong class="font-semibold">ISE Prize</strong>
+                        for an outstanding oral presentation
+                    </p>
+                    <p class="mb-20">
+                        <strong class="font-semibold">Peter-Sitte Prize</strong>
+                        for an outstanding poster presentation
+                    </p>
+
+                    <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">ORGANIZER</h3>
+
+                    <p class="font-semibold">Marek Eliáš</p>
+                    <p>University of Ostrava</p>
+                    <p>Faculty of Science, Department of Biology and Ecology</p>
+                    <p>Chittussiho 10, 710 00 Ostrava</p>
+                    <p>Czech Republic</p>
+                    <p class="mb-20">Email: marekelias1978@gmail.com</p>
+
+                    <a class="mb-6 inline-flex h-13 items-center justify-center border-[2px] border-[#00B497] px-14 text-[16px]/[28px] font-semibold tracking-wide text-[#00B497]">GET IN TOUCH</a>
+                </div>
+            </section>
+
+            <footer class="h-20 bg-gray-200">
+                <div class="flex h-full items-center justify-center text-[20px]/[28px] text-gray-600">[footer placeholder]</div>
+            </footer>
+        </div>
+    </body>
+</html>
