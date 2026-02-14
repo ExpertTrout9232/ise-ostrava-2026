@@ -12,39 +12,23 @@
 
     <style type="text/tailwindcss">
         @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Regular.ttf');
-            font-weight: 400;
+            font-family: 'IBM Plex Sans';
+            src: url('fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf') format('truetype');
+            font-weight: 100 700;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Medium.ttf');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-SemiBold.ttf');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Italic.ttf');
-            font-weight: 400;
+            font-family: 'IBM Plex Sans';
+            src: url('fonts/IBMPlexSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
+            font-weight: 100 700;
             font-style: italic;
             font-display: swap;
         }
 
         @theme {
-            --font-sans: 'Source Sans 3';
+            --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 
             @keyframes darken {
                 from {background-color: rgba(0,0,0,0);}
@@ -67,7 +51,6 @@
 
         @layer base {
             html {scroll-behavior: smooth;}
-            body {@apply font-sans;} /* remove later */
         }
     </style>
 </head>
@@ -182,7 +165,7 @@
 
                 <a href="https://symbio.eko.uj.edu.pl/en_GB/staff/piotr-lukasik" target="_blank" class="font-semibold text-[20px]/[30px] inline-flex items-center gap-2 group">
                     <span>Piotr Łukasik</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[0.8em] h-[0.8em] -translate-y-[1px] text-gray-300 group-hover:text-black transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[0.8em] h-[0.8em] text-gray-300 group-hover:text-black transition-colors">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                     </svg>
                 </a>
