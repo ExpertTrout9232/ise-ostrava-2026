@@ -12,39 +12,23 @@
 
     <style type="text/tailwindcss">
         @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Regular.ttf');
-            font-weight: 400;
+            font-family: 'IBM Plex Sans';
+            src: url('fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf') format('truetype');
+            font-weight: 100 700;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Medium.ttf');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-SemiBold.ttf');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Italic.ttf');
-            font-weight: 400;
+            font-family: 'IBM Plex Sans';
+            src: url('fonts/IBMPlexSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
+            font-weight: 100 700;
             font-style: italic;
             font-display: swap;
         }
 
         @theme {
-            --font-sans: 'Source Sans 3';
+            --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 
             @keyframes darken {
                 from { background-color: rgba(0,0,0,0); }
@@ -143,10 +127,10 @@
         </section>
 
         <section id="content" class="bg-white min-h-screen py-20">
-            <div class="w-[640px] mx-auto text-[20px]/[28px] text-[#010101] tracking-normal opacity-0 animate-fade-in [animation-delay:0.3s]">
-                <p class="mb-20">The program layout below is <strong class="font-semibold">preliminary</strong> and will be updated depending on the number of participants. Coffee breaks will be scheduled during both the morning and afternoon sessions.</p>
+            <div class="max-w-[688px] px-6 mx-auto text-[19px]/[28px] text-[#010101] tracking-normal opacity-0 animate-fade-in [animation-delay:0.3s]">
+                <p class="mb-15">The program layout below is <strong class="font-semibold">preliminary</strong> and will be updated depending on the number of participants. Coffee breaks will be scheduled during both the morning and afternoon sessions.</p>
 
-                <p class="font-semibold">Monday, September 14</p>
+                <!-- <p class="font-semibold">Monday, September 14</p>
                 <p>15:00-20:00 &ndash; Registration</p>
                 <p class="mb-6">18:00-21:00 &ndash; Welcome party</p>
 
@@ -173,7 +157,79 @@
                 <p class="font-semibold">Friday, September 18</p>
                 <p>9:00-11:00 &ndash; Talks</p>
                 <p>11:00-11:30 &ndash; Awards for students and young investigators</p>
-                <p class="mb-20">11:30-12:00 &ndash; Closing remarks and farewell</p>
+                <p class="mb-20">11:30-12:00 &ndash; Closing remarks and farewell</p> -->
+
+                <p class="mb-3 font-semibold">Monday, September 14</p>
+                <div class="grid grid-cols-[110px_1fr] gap-x-5 mb-[30px] text-[19px]/[36px]">
+                    <div>15:00-20:00</div>
+                    <div>Registration</div>
+
+                    <div>18:00-21:00</div>
+                    <div>Welcome party</div>
+                </div>
+                
+                <p class="mb-3 font-semibold">Tuesday, September 15</p>
+                <div class="grid grid-cols-[110px_1fr] gap-x-5 mb-[30px] text-[19px]/[36px]">
+                    <div>9:00-12:00</div>
+                    <div>Talks</div>
+
+                    <div>12:00-14:00</div>
+                    <div>Lunch</div>
+
+                    <div>14:00-17:00</div>
+                    <div>Talks</div>
+
+                    <div>17:00-18:30</div>
+                    <div>Poster session I</div>
+                </div>
+
+                <p class="mb-3 font-semibold">Wednesday, September 16</p>
+                <div class="grid grid-cols-[110px_1fr] gap-x-5 mb-[30px] text-[19px]/[36px]">
+                    <div>9:00-11:00</div>
+                    <div>Talks</div>
+
+                    <div>11:00-12:30</div>
+                    <div>Miescher-Ishida Award Ceremony</div>
+
+                    <div>12:30-14:00</div>
+                    <div>Lunch</div>
+
+                    <div>14:00-16:00</div>
+                    <div>Guided tour of the Michal Coalmine</div>
+
+                    <div>16:00-22:00</div>
+                    <div>Trip to Hynčice (Mendel House), conference dinner</div>
+                </div>
+
+                <p class="mb-3 font-semibold">Thursday, September 17</p>
+                <div class="grid grid-cols-[110px_1fr] gap-x-5 mb-[30px] text-[19px]/[36px]">
+                    <div>9:00-12:00</div>
+                    <div>Talks</div>
+
+                    <div>12:00-14:00</div>
+                    <div>Lunch</div>
+
+                    <div>14:00-16:00</div>
+                    <div>Talks</div>
+
+                    <div>16:00-17:30</div>
+                    <div>Karel Šulc minisymposium</div>
+
+                    <div>17:30-18:30</div>
+                    <div>Poster session II</div>
+                </div>
+
+                <p class="mb-3 font-semibold">Friday, September 18</p>
+                <div class="grid grid-cols-[110px_1fr] gap-x-5 mb-15 text-[19px]/[36px]">
+                    <div>9:00-11:00</div>
+                    <div>Talks</div>
+
+                    <div>11:00-11:30</div>
+                    <div>Awards for students and young investigators</div>
+
+                    <div>11:30-12:00</div>
+                    <div>Closing remarks and farewell</div>
+                </div>
 
                 <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7 uppercase">SPECIAL FEATURES OF THE PROGRAM</h3>
 

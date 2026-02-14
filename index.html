@@ -47,6 +47,12 @@
                 to { opacity: 1; transform: translateY(0); }
             }
             --animate-fade-in-down: fade-in-down 0.5s ease-out forwards;
+
+            @keyframes fade-in {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            --animate-fade-in: fade-in 0.5s ease-out forwards;
         }
 
         @layer base {
@@ -124,7 +130,7 @@
         </section>
 
         <section id="content" class="bg-white min-h-screen py-20">
-            <div class="max-w-[688px] px-6 mx-auto text-[20px]/[28px] text-[#010101] tracking-normal">
+            <div class="max-w-[688px] px-6 mx-auto text-[19px]/[28px] text-[#010101] tracking-normal opacity-0 animate-fade-in [animation-delay:0.3s]">
                 <p class="mb-20 text-center">We are excited to announce <br><strong class="font-semibold">The 16th International Colloquium on Endocytobiology and Symbiosis</strong></p>
                     
                 <p class="mb-6">Following the previous meeting of this series, held in 2023 in Chicago, we are now moving to Central Europe&mdash;specifically to a city located exactly on (and divided by) the historical border between Moravia and Silesia. The meeting will cover diverse aspects of the biology of endosymbionts, organelles, and related topics. Therefore, if you work in these fields or are simply curious about them, do not hesitate to join us.</p>
@@ -149,27 +155,13 @@
 
                 <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">CONFIRMED SPEAKERS</h3>
 
-                <!-- <p class="italic text-[20px]/[30px] mb-20">To be announced.</p> -->
-
-                <!-- <p class="font-semibold text-[20px]/[30px]">Kateřina Bišová</p>
-                <p class="italic text-[20px]/[30px] mb-6">Centre Algatech, Czech Academy of Sciences, Czech Republic</p>
-
-                <p class="font-semibold text-[20px]/[30px]">Ralph Bock</p>
-                <p class="italic text-[20px]/[30px] mb-6">Max Planck Institute for Molecular Plant Physiology, Germany</p>
-
-                <p class="font-semibold text-[20px]/[30px]">Lenka Caisová</p>
-                <p class="italic text-[20px]/[30px] mb-6">Institute of Plant Molecular Biology, Czech Academy of Sciences, Czech Republic</p>
-
-                <p class="font-semibold text-[20px]/[30px]">Marek Eliáš</p>
-                <p class="italic text-[20px]/[30px] mb-20">University of Ostrava, Czech Republic</p> -->
-
-                <a href="https://symbio.eko.uj.edu.pl/en_GB/staff/piotr-lukasik" target="_blank" class="font-semibold text-[20px]/[30px] inline-flex items-center gap-2 group">
+                <a href="https://symbio.eko.uj.edu.pl/en_GB/staff/piotr-lukasik" target="_blank" class="font-semibold text-[19px]/[32px] inline-flex items-center gap-2 group">
                     <span>Piotr Łukasik</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[0.8em] h-[0.8em] text-gray-300 group-hover:text-black transition-colors">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                     </svg>
                 </a>
-                <p class="italic text-[20px]/[30px] mb-20">Jagiellonian University, Kraków, Poland</p>
+                <p class="italic text-[19px]/[32px] mb-20">Jagiellonian University, Kraków, Poland</p>
 
                 <h3 class="font-semibold text-[18px]/[28px] tracking-wide mb-7">PROGRAM & FORMAT</h3>
                 
@@ -191,7 +183,7 @@
                 <p>Czech Republic</p>
                 <p class="mb-20">Email: marekelias1978@gmail.com</p>
 
-                <a class="mb-6 inline-flex items-center justify-center font-semibold text-[18px]/[28px] tracking-wide h-13 px-14 border-[2px] border-[#00B497] text-[#00B497]">GET IN TOUCH</a>
+                <a class="mb-6 inline-flex items-center justify-center font-semibold text-[16px]/[28px] tracking-wide h-13 px-14 border-[2px] border-[#00B497] text-[#00B497]">GET IN TOUCH</a>
             </div>
         </section>
 

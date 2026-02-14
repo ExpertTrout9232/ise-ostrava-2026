@@ -12,39 +12,23 @@
 
     <style type="text/tailwindcss">
         @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Regular.ttf');
-            font-weight: 400;
+            font-family: 'IBM Plex Sans';
+            src: url('fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf') format('truetype');
+            font-weight: 100 700;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Medium.ttf');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-SemiBold.ttf');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Source Sans 3';
-            src: url('fonts/SourceSans3-Italic.ttf');
-            font-weight: 400;
+            font-family: 'IBM Plex Sans';
+            src: url('fonts/IBMPlexSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
+            font-weight: 100 700;
             font-style: italic;
             font-display: swap;
         }
 
         @theme {
-            --font-sans: 'Source Sans 3';
+            --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 
             @keyframes darken {
                 from { background-color: rgba(0,0,0,0); }
@@ -143,7 +127,7 @@
         </section>
 
         <section id="content" class="bg-white min-h-screen py-20">
-            <div class="w-[640px] mx-auto text-[20px]/[28px] text-[#010101]tracking-normal opacity-0 animate-fade-in [animation-delay:0.3s]">
+            <div class="max-w-[688px] px-6 mx-auto text-[19px]/[28px] text-[#010101] tracking-normal opacity-0 animate-fade-in [animation-delay:0.3s]">
                 <div class="mb-20 relative">
                     <div class="absolute left-full ml-16 top-0 w-max flex flex-col items-center">
                         <img src="images/prirodovedecka-fakulta.webp" class="rounded-lg shadow-md mb-2 w-[350px]" alt="Faculty of Science, University of Ostrava">
