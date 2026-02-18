@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Tailwind CSS
-        run: npm run build 
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './src' 
+          path: './src'
 
       - name: Deploy to GitHub Pages
         id: deployment

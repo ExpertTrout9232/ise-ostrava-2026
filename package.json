@@ -19,14 +19,32 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "server": "live-server ./src --port=8080 --no-browser",
+    "dev": "concurrently \"npm run tailwind\" \"npm run server\"",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify",
-    "format": "prettier --write \"src/**/*.html\""
+    "format": "prettier --write \"src/**/*.{html,css,js}\"",
+    "lint": "eslint \"src/**/*.{html,css,js}\" --quiet",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@eslint/css": "^0.14.1",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.0.1",
+    "@eslint/markdown": "^7.5.1",
+    "@html-eslint/eslint-plugin": "^0.55.0",
     "@tailwindcss/cli": "^4.1.18",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0",
+    "husky": "^9.1.7",
+    "live-server": "^1.2.2",
     "prettier": "^3.8.1",
+    "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "tailwind-csstree": "^0.1.4"
   }
 }

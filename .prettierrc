@@ -1,11 +1,5 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "printWidth": 99999,
-  "tabWidth": 2,
-  "useTabs": false,
-  "htmlWhitespaceSensitivity": "ignore",
-  "bracketSameLine": true,
-  "singleAttributePerLine": false,
-  "proseWrap": "preserve",
-  "embeddedLanguageFormatting": "off"
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-organize-attributes"],
+  "printWidth": 120,
+  "attributeGroups": ["$CODE_GUIDE"]
 }

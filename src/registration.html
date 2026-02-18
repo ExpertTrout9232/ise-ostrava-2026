@@ -7,9 +7,9 @@
     <title>ISE 2026 Ostrava</title>
     <meta name="description" content="Official web of the ISE 2026 Ostrava conference." />
 
-    <link rel="preload" href="./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin />
+    <link type="font/ttf" href="./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf" rel="preload" as="font" crossorigin />
 
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link type="image/x-icon" href="./favicon.ico" rel="icon" />
     <meta name="theme-color" content="#ffffff" />
 
     <link href="./output.css" rel="stylesheet" />
@@ -17,48 +17,61 @@
   <body>
     <!-- * Remove later-->
     <div class="fixed inset-0 z-100 flex h-8 items-center justify-center bg-black/42" id="dev-banner">
-      <div class="px-8 text-center text-4xl font-semibold text-white">In development, everything is subject to change</div>
+      <div class="px-8 text-center text-4xl font-semibold text-white">
+        In development, everything is subject to change
+      </div>
     </div>
 
     <div class="fixed inset-0 z-0">
-      <img src="images/osu-prf.webp" class="h-1/2 w-full object-cover" alt="Background" />
+      <img class="h-1/2 w-full object-cover" src="images/osu-prf.webp" alt="Background" />
       <div class="animate-darken absolute inset-0"></div>
     </div>
 
-    <nav class="animate-fade-in-down fixed top-0 left-0 z-50 h-20 w-full bg-white px-15 text-black opacity-0 [animation-delay:0.5s]">
+    <nav
+      class="animate-fade-in-down fixed top-0 left-0 z-50 h-20 w-full bg-white px-15 text-black opacity-0 [animation-delay:0.5s]"
+    >
       <div class="flex h-full w-full items-center justify-between">
         <div class="flex items-center gap-5">
-          <img src="images/logo.jpg" alt="Logo" class="h-11 object-contain" />
-          <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center text-[21px]/[28px]">
-            <span class="col-start-1 row-start-1 font-medium transition-opacity duration-300 group-hover:opacity-0">ISE 2026 Ostrava</span>
-            <span class="col-start-1 row-start-1 font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100">ISE 2026 Ostrava</span>
+          <img class="h-11 object-contain" src="images/logo.jpg" alt="Logo" />
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center text-[21px]/[28px]" href="./#">
+            <span class="col-start-1 row-start-1 font-medium transition-opacity duration-300 group-hover:opacity-0"
+              >ISE 2026 Ostrava</span
+            >
+            <span
+              class="col-start-1 row-start-1 font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >ISE 2026 Ostrava</span
+            >
           </a>
         </div>
 
         <div class="font-regular flex gap-11 text-[20px]/[28px]">
-          <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Home</span>
             <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Home</span>
           </a>
-          <a href="./program.html#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./program.html#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Program</span>
             <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Program</span>
           </a>
-          <a href="./registration.html#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./registration.html#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Registration</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Registration</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold"
+              >Registration</span
+            >
           </a>
-          <a href="./venue.html#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./venue.html#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Venue</span>
             <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Venue</span>
           </a>
-          <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Sponsors</span>
             <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Sponsors</span>
           </a>
-          <a href="./#" class="group grid grid-cols-1 grid-rows-1 place-items-center">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Travel Grant</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Travel Grant</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold"
+              >Travel Grant</span
+            >
           </a>
         </div>
       </div>
@@ -66,24 +79,39 @@
 
     <div class="relative z-10">
       <section class="relative flex h-[50vh] flex-col items-center justify-center">
-        <h1 class="animate-fade-in-up text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]">Registration</h1>
+        <h1 class="animate-fade-in-up text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]">
+          Registration
+        </h1>
 
-        <a href="#content" class="animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-12 w-12 animate-bounce">
+        <a
+          class="animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]"
+          href="#content"
+        >
+          <svg
+            class="h-12 w-12 animate-bounce"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
           </svg>
         </a>
       </section>
 
-      <section id="content" class="min-h-screen bg-white py-20">
-        <div class="animate-fade-in mx-auto max-w-[688px] px-6 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 [animation-delay:0.3s]">
+      <div class="min-h-screen bg-white py-20" id="content">
+        <section
+          class="animate-fade-in mx-auto max-w-[688px] px-6 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 [animation-delay:0.3s]"
+        >
           <p class="mb-6">
             Registration will open in April, with the early-bird deadline on
             <strong class="font-semibold">the 15th of June</strong>
-            . The conference fee rates will be announced later and will depend on how much external support we manage to secure.
+            . The conference fee rates will be announced later and will depend on how much external support we manage to
+            secure.
           </p>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <footer class="h-20 bg-gray-200">
         <div class="flex h-full items-center justify-center text-[20px]/[28px] text-gray-600">[footer placeholder]</div>
