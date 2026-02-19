@@ -15,76 +15,107 @@
     <link href="./output.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- * Remove later-->
-    <div class="fixed inset-0 z-100 flex h-8 items-center justify-center bg-black/42" id="dev-banner">
-      <div class="px-8 text-center text-4xl font-semibold text-white">
-        In development, everything is subject to change
-      </div>
-    </div>
-
     <div class="fixed inset-0 z-0">
-      <img class="h-1/2 w-full object-cover" src="images/osu-prf.webp" alt="Background" />
+      <!-- This is a very quirky way of making the image appear right on mobile screens-->
+      <img class="h-[440px] md:h-[500px] w-full object-cover" src="./images/osu-prf.webp" alt="Background" />
       <div class="animate-darken absolute inset-0"></div>
     </div>
 
     <nav
-      class="animate-fade-in-down fixed top-0 left-0 z-50 h-20 w-full bg-white px-15 text-black opacity-0 [animation-delay:0.5s]"
+      class="animate-fade-in-down fixed top-0 left-0 z-40 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
     >
       <div class="flex h-full w-full items-center justify-between">
-        <div class="flex items-center gap-5">
-          <img class="h-11 object-contain" src="images/logo.jpg" alt="Logo" />
-          <a class="group grid grid-cols-1 grid-rows-1 place-items-center text-[21px]/[28px]" href="./#">
-            <span class="col-start-1 row-start-1 font-medium transition-opacity duration-300 group-hover:opacity-0"
-              >ISE 2026 Ostrava</span
-            >
-            <span
-              class="col-start-1 row-start-1 font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              >ISE 2026 Ostrava</span
-            >
+        <div class="flex items-center">
+          <a class="group flex items-center gap-3 md:gap-5 text-[19px]/[28px]" href="./#">
+            <img class="md:h-11 object-contain h-7.5" src="./images/logo.jpg" alt="Logo" />
+
+            <div class="grid grid-cols-1 grid-rows-1 place-items-center">
+              <span class="col-start-1 row-start-1 font-medium transition-opacity duration-300 group-hover:opacity-0">
+                ISE 2026 Ostrava
+              </span>
+              <span
+                class="col-start-1 row-start-1 font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                ISE 2026 Ostrava
+              </span>
+            </div>
           </a>
         </div>
 
-        <div class="font-regular flex gap-11 text-[20px]/[28px]">
+        <div class="font-regular hidden xl:flex gap-11 text-[19px]/[28px]">
           <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Home</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Home</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Home</span>
           </a>
           <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./program.html#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Program</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Program</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Program</span>
           </a>
           <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./registration.html#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Registration</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold"
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium"
               >Registration</span
             >
           </a>
           <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./venue.html#">
             <span class="invisible col-start-1 row-start-1 font-semibold">Venue</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Venue</span>
-          </a>
-          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
-            <span class="invisible col-start-1 row-start-1 font-semibold">Sponsors</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold">Sponsors</span>
-          </a>
-          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
-            <span class="invisible col-start-1 row-start-1 font-semibold">Travel Grant</span>
-            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-semibold"
-              >Travel Grant</span
-            >
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Venue</span>
           </a>
         </div>
+
+        <button
+          class="xl:hidden text-black focus:outline-none cursor-pointer hover:opacity-60 transition-opacity duration-200"
+          id="menu-open-btn"
+          aria-label="Open menu"
+        >
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
       </div>
     </nav>
 
+    <div
+      class="fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      id="menu-overlay"
+    ></div>
+
+    <aside
+      class="fixed top-0 right-0 z-[60] h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      id="side-drawer"
+    >
+      <div class="flex h-20 items-center justify-end px-5">
+        <button
+          class="p-2 text-black focus:outline-none cursor-pointer hover:opacity-60 transition-opacity duration-200"
+          id="menu-close-btn"
+          aria-label="Close menu"
+        >
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-6 px-8 py-4 text-[20px]/[28px]">
+        <a class="hover:font-medium transition-all" href="./#">Home</a>
+        <a class="hover:font-medium transition-all" href="./program.html#">Program</a>
+        <a class="hover:font-medium transition-all" href="./registration.html#">Registration</a>
+        <a class="hover:font-medium transition-all" href="./venue.html#">Venue</a>
+        <!-- <a class="hover:font-medium transition-all" href="./#">Sponsors</a>
+        <a class="hover:font-medium transition-all" href="./#">Travel Grant</a> -->
+      </div>
+    </aside>
+
     <div class="relative z-10">
-      <section class="relative flex h-[50vh] flex-col items-center justify-center">
-        <h1 class="animate-fade-in-up text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]">
+      <section class="relative flex h-[360px] md:h-[500px] mt-16 md:mt-0 flex-col items-center justify-center">
+        <h1
+          class="animate-fade-in-up text-[48px]/[56px] md:text-[72px]/[80px] xl:text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]"
+        >
           Registration
         </h1>
 
         <a
-          class="animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]"
+          class="hidden md:block animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]"
           href="#content"
         >
           <svg
@@ -100,9 +131,10 @@
         </a>
       </section>
 
-      <div class="min-h-screen bg-white py-20" id="content">
+      <div class="min-h-screen bg-white py-20">
         <section
-          class="animate-fade-in mx-auto max-w-[688px] px-6 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 [animation-delay:0.3s]"
+          class="animate-fade-in mx-auto max-w-[700px] px-7.5 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 scroll-mt-30 [animation-delay:0.3s]"
+          id="content"
         >
           <p class="mb-6">
             Registration will open in April, with the early-bird deadline on
@@ -113,9 +145,65 @@
         </section>
       </div>
 
-      <footer class="h-20 bg-gray-200">
-        <div class="flex h-full items-center justify-center text-[20px]/[28px] text-gray-600">[footer placeholder]</div>
+      <footer class="bg-[#F0F4F9]">
+        <div class="flex max-w-[700px] mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-[160px] md:w-[130px]">
+            <p>Stay tuned!</p>
+          </div>
+          <div class="w-[160px] md:w-[130px]">
+            <ul>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./registration.html#">Registration</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./venue.html#">Venue</a></li>
+            </ul>
+          </div>
+        </div>
       </footer>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const openBtn = document.getElementById("menu-open-btn");
+        const closeBtn = document.getElementById("menu-close-btn");
+        const overlay = document.getElementById("menu-overlay");
+        const drawer = document.getElementById("side-drawer");
+
+        // Funkce pro otevření menu
+        const openMenu = () => {
+          // Zobrazí overlay (přidá neprůhlednost a povolí klikání)
+          overlay.classList.remove("opacity-0", "pointer-events-none");
+          overlay.classList.add("opacity-100", "pointer-events-auto");
+
+          // Vysune menu zprava doleva (odstraní posun mimo obrazovku)
+          drawer.classList.remove("translate-x-full");
+          drawer.classList.add("translate-x-0");
+
+          // Volitelně zamezí scrollování těla stránky když je menu otevřené
+          document.body.style.overflow = "hidden";
+        };
+
+        // Funkce pro zavření menu
+        const closeMenu = () => {
+          // Skryje overlay
+          overlay.classList.remove("opacity-100", "pointer-events-auto");
+          overlay.classList.add("opacity-0", "pointer-events-none");
+
+          // Zasune menu zpět doprava
+          drawer.classList.remove("translate-x-0");
+          drawer.classList.add("translate-x-full");
+
+          // Vrátí scrollování
+          document.body.style.overflow = "";
+        };
+
+        // Listenery událostí
+        openBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+
+        // Kliknutí na ztmavené pozadí menu také zavře
+        overlay.addEventListener("click", closeMenu);
+      });
+    </script>
   </body>
 </html>
