@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ise-2026.osu.cz/sitemap.xml

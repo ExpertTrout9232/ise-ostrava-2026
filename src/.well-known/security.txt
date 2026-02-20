@@ -1,0 +1,5 @@
+Contact: mailto:VincencElias@protonmail.com
+Expires: 2026-12-31T23:59:59Z
+Encryption: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x8bbebb438468e9a3376ccb2600b9525b07cde6ed
+Preferred-Languages: en, cs
+Canonical: https://ise-2026.osu.cz/.well-known/security.txt

@@ -3,7 +3,7 @@
 # top-most EditorConfig file
 root = true
 
-[{src/**/*.{html,css,js},.github/**/*,.husky/**/*,.vscode/**/*,package.json,eslint.config.js,.prettierrc,.prettierignore,.gitignore,.editorconfig}]
+[{src/**/*.{html,css,js,xml},.github/**/*,.husky/**/*,.vscode/**/*,package.json,eslint.config.js,.prettierrc,.prettierignore,.gitignore,.editorconfig}]
 end_of_line = lf
 indent_style = space
 indent_size = 2
