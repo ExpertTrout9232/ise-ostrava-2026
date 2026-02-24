@@ -6,7 +6,17 @@
 
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self';"
+      content="
+        default-src 'self';
+        script-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        style-src 'self' 'unsafe-inline';
+        font-src 'self';
+        img-src 'self' data:;
+        frame-src 'self' https://www.google.com;
+        connect-src 'self';
+      "
     />
 
     <title>Venue | ISE 2026 Ostrava</title>
@@ -278,7 +288,9 @@
             .
           </p>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">ACCOMMODATION RECOMMENDATIONS</h3>
+          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">
+            RECOMMENDATIONS FOR ACCOMMODATION IN OSTRAVA
+          </h3>
 
           <p class="mb-10">Coming soon.</p>
         </section>

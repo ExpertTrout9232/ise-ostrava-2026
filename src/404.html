@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        style-src 'self' 'unsafe-inline';
+        font-src 'self';
+        img-src 'self' data:;
+        frame-src 'self' https://www.google.com;
+        connect-src 'self';
+      "
+    />
+
     <title>Page not Found | ISE 2026 Ostrava</title>
     <meta name="keywords" content="ISE 2026, Ostrava conference, endocytobiology, symbiosis, biological colloquium" />
     <meta
@@ -12,12 +27,17 @@
     />
     <meta name="author" content="Marek Eliáš, University of Ostrava" />
 
-    <link href="https://ise-2026.osu.cz/" rel="canonical" />
+    <link href="https://ise-2026.osu.cz/registration.html" rel="canonical" />
+
     <link type="font/ttf" href="./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf" rel="preload" as="font" crossorigin />
+
     <link type="image/x-icon" href="./favicon.ico" rel="icon" sizes="any" />
     <link type="image/png" href="./favicon-512.png" rel="icon" sizes="512x512" />
     <link href="./favicon-512.png" rel="apple-touch-icon" />
+
     <link href="./output.css" rel="stylesheet" />
+
+    <script src="./js/main.js" defer></script>
 
     <meta name="theme-color" content="#ffffff" />
 
@@ -163,49 +183,5 @@
         </div>
       </footer>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const openBtn = document.getElementById("menu-open-btn");
-        const closeBtn = document.getElementById("menu-close-btn");
-        const overlay = document.getElementById("menu-overlay");
-        const drawer = document.getElementById("side-drawer");
-
-        // Funkce pro otevření menu
-        const openMenu = () => {
-          // Zobrazí overlay (přidá neprůhlednost a povolí klikání)
-          overlay.classList.remove("opacity-0", "pointer-events-none");
-          overlay.classList.add("opacity-100", "pointer-events-auto");
-
-          // Vysune menu zprava doleva (odstraní posun mimo obrazovku)
-          drawer.classList.remove("translate-x-full");
-          drawer.classList.add("translate-x-0");
-
-          // Volitelně zamezí scrollování těla stránky když je menu otevřené
-          document.body.style.overflow = "hidden";
-        };
-
-        // Funkce pro zavření menu
-        const closeMenu = () => {
-          // Skryje overlay
-          overlay.classList.remove("opacity-100", "pointer-events-auto");
-          overlay.classList.add("opacity-0", "pointer-events-none");
-
-          // Zasune menu zpět doprava
-          drawer.classList.remove("translate-x-0");
-          drawer.classList.add("translate-x-full");
-
-          // Vrátí scrollování
-          document.body.style.overflow = "";
-        };
-
-        // Listenery událostí
-        openBtn.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
-
-        // Kliknutí na ztmavené pozadí menu také zavře
-        overlay.addEventListener("click", closeMenu);
-      });
-    </script>
   </body>
 </html>

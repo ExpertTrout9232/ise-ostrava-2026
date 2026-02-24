@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTP_HOST} !^ise-2026\.osu\.cz$ [NC,OR]
+  RewriteCond %{HTTPS} off
+
+  RewriteRule ^(.*)$ https://ise-2026.osu.cz/$1 [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src 'self' https://www.google.com; connect-src 'self';"
+</IfModule>
