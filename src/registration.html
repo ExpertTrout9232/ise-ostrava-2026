@@ -8,14 +8,14 @@
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self';
-        script-src 'self';
+        script-src 'self' https://cloud.umami.is;
         object-src 'none';
         base-uri 'self';
         style-src 'self' 'unsafe-inline';
         font-src 'self';
         img-src 'self' data:;
         frame-src 'self' https://www.google.com;
-        connect-src 'self';
+        connect-src 'self' https://api-gateway.umami.dev;
       "
     />
 
@@ -38,6 +38,13 @@
     <link href="./output.css" rel="stylesheet" />
 
     <script src="./js/main.js" defer></script>
+
+    <script
+      data-website-id="66d8ead8-8e65-407d-abba-46e7d58255bd"
+      data-domains="ise-2026.osu.cz"
+      src="https://cloud.umami.is/script.js"
+      defer
+    ></script>
 
     <meta name="theme-color" content="#ffffff" />
 

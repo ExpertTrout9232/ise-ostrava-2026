@@ -8,5 +8,5 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src 'self' https://www.google.com; connect-src 'self';"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cloud.umami.is; object-src 'none'; base-uri 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src 'self' https://www.google.com; connect-src 'self' https://api-gateway.umami.dev;"
 </IfModule>
