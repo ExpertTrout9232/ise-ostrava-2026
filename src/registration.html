@@ -38,6 +38,7 @@
     <link href="./output.css" rel="stylesheet" />
 
     <script src="./js/main.js" defer></script>
+    <script src="./js/newsletter.js" defer></script>
 
     <meta name="theme-color" content="#ffffff" />
 
@@ -184,6 +185,37 @@
             <strong class="font-semibold">the 15th of June</strong>. The conference fee rates will be announced later
             and will depend on how much external support we manage to secure.
           </p>
+
+          <hr class="my-10 border-t border-[#D1D9E6]" />
+
+          <h2 class="mb-3 text-[24px]/[32px] font-semibold">Stay in the Loop</h2>
+          <p class="mb-6 text-[#40577B]">
+            Leave your email address and we will notify you as soon as registration opens and when important deadlines
+            approach.
+          </p>
+
+          <form id="newsletter-form" novalidate>
+            <div class="flex flex-col md:flex-row gap-3">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input
+                class="flex-1 rounded-sm border border-[#D1D9E6] px-4 py-2.5 text-[16px]/[28px] text-[#010101] placeholder-[#9BAEC8] outline-none transition-colors duration-200 focus:border-[#00B497] focus:ring-2 focus:ring-[#00B497]/20"
+                id="newsletter-email"
+                name="email"
+                type="email"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+              />
+              <button
+                class="inline-flex cursor-pointer items-center justify-center rounded-sm border-2 border-[#00B497] px-10 py-2.5 text-[16px]/[28px] font-semibold tracking-wide text-[#00B497] transition-colors duration-300 hover:bg-[#00B497] hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                id="newsletter-submit"
+                type="submit"
+              >
+                Keep Me Updated
+              </button>
+            </div>
+            <p class="mt-3 text-[15px]/[24px]" id="newsletter-status" aria-live="polite"></p>
+          </form>
         </section>
       </div>
 
