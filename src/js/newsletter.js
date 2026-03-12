@@ -15,6 +15,12 @@
 const API_ENDPOINT = "/api/newsletter";
 
 /**
+ * Set to `true` once the backend endpoint is live.
+ * While `false`, the form shows a "coming soon" notice instead of submitting.
+ */
+const BACKEND_READY = false;
+
+/**
  * Returns true when the string is a valid e-mail address.
  * Matches the HTML5 `<input type="email">` validity algorithm defined in
  * https://html.spec.whatwg.org/multipage/input.html#email-state-(type=email)
@@ -82,6 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    if (!BACKEND_READY) {
+      setStatus("Registration signup is coming soon — check back when registration opens!", "idle");
+      return;
+    }
 
     const email = emailInput.value;
 
