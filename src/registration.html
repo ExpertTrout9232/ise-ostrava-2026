@@ -64,7 +64,7 @@
     <div class="fixed inset-0 z-0">
       <!-- This is a very quirky way of making the image appear right on mobile screens-->
       <img
-        class="h-[440px] md:h-[500px] w-full object-cover"
+        class="h-[440px] md:h-[min(560px,52vh)] w-full object-cover"
         src="./images/osu-prf.webp"
         alt="Detailed view of the Faculty of Science building facade at the University of Ostrava, the main venue for ISE 2026 conference"
       />
@@ -157,7 +157,9 @@
     </aside>
 
     <div class="relative z-10">
-      <section class="relative flex h-[360px] md:h-[500px] mt-16 md:mt-0 flex-col items-center justify-center">
+      <section
+        class="relative flex h-[360px] md:h-[min(500px,46vh)] mt-16 md:mt-0 flex-col items-center justify-center"
+      >
         <h1
           class="animate-fade-in-up text-[48px]/[56px] md:text-[72px]/[80px] xl:text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]"
         >
