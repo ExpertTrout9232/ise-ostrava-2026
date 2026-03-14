@@ -3,30 +3,21 @@ Production deployment script.
 
 Builds the site, clears the remote directory over SFTP, and uploads src/.
 Run via: npm run deploy
-Force-sync local repo from origin before deploy: npm run deploy -- --force-pull
 
 Required variables in .env (see .env.example):
 SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_REMOTE_PATH
 
 Optional:
 SFTP_PORT (default: 22)
-
-CLI flags:
---force-pull  Hard-resets the current local branch to origin/<branch> and removes untracked files before deployment.
 */
 
 import "dotenv/config";
 import SftpClient from "ssh2-sftp-client";
-import { execFile } from "child_process";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import { promisify } from "util";
 
 const ROOT_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC_DIR = resolve(ROOT_DIR, "src");
-const execFileAsync = promisify(execFile);
-const FORCE_PULL_FLAG = "--force-pull";
-const FORCE_PULL = process.argv.includes(FORCE_PULL_FLAG);
 
 function step(n, total, message) {
   console.log(`\n  [${n}/${total}] ${message}`);
@@ -41,26 +32,6 @@ function abort(message, hint) {
   if (hint) console.error(`         ${hint}`);
   console.error("");
   process.exit(1);
-}
-
-async function forcePullFromOrigin() {
-  info("Fetching latest refs from origin.");
-  await execFileAsync("git", ["fetch", "origin", "--prune"], { cwd: ROOT_DIR });
-
-  const { stdout: branchStdout } = await execFileAsync("git", ["rev-parse", "--abbrev-ref", "HEAD"], {
-    cwd: ROOT_DIR,
-  });
-  const branch = branchStdout.trim();
-
-  if (!branch || branch === "HEAD") {
-    throw new Error("Cannot use --force-pull in detached HEAD state.");
-  }
-
-  info(`Resetting local branch to origin/${branch}.`);
-  await execFileAsync("git", ["reset", "--hard", `origin/${branch}`], { cwd: ROOT_DIR });
-
-  info("Removing untracked files and directories.");
-  await execFileAsync("git", ["clean", "-fd"], { cwd: ROOT_DIR });
 }
 
 const REQUIRED_VARS = ["SFTP_HOST", "SFTP_USER", "SFTP_PASSWORD", "SFTP_REMOTE_PATH"];
@@ -130,27 +101,17 @@ function describeConnectionError(err) {
   return null;
 }
 
-const TOTAL_STEPS = FORCE_PULL ? 5 : 4;
+const TOTAL_STEPS = 4;
 
 console.log("\n  ISE 2026 Ostrava — Production deployment");
 console.log(`  Local  : ${SRC_DIR}`);
 console.log(`  Remote : ${SFTP_HOST}:${SFTP_PORT}  ${SFTP_REMOTE_PATH}`);
-if (FORCE_PULL) {
-  console.log("  Sync   : enabled (--force-pull)");
-}
 
 const sftp = new SftpClient("ise-deploy");
 let deployError = null;
 
 try {
-  let stepNumber = 1;
-
-  if (FORCE_PULL) {
-    step(stepNumber++, TOTAL_STEPS, "Force-pulling from origin");
-    await forcePullFromOrigin();
-  }
-
-  step(stepNumber++, TOTAL_STEPS, "Connecting");
+  step(1, TOTAL_STEPS, "Connecting");
   await sftp.connect({
     host: SFTP_HOST,
     port: SFTP_PORT,
@@ -159,14 +120,14 @@ try {
     readyTimeout: 20_000,
   });
 
-  step(stepNumber++, TOTAL_STEPS, "Preparing remote directory");
+  step(2, TOTAL_STEPS, "Preparing remote directory");
   await ensureRemoteDir(sftp, SFTP_REMOTE_PATH);
   await clearRemoteDir(sftp, SFTP_REMOTE_PATH);
 
-  step(stepNumber++, TOTAL_STEPS, "Uploading files");
+  step(3, TOTAL_STEPS, "Uploading files");
   await sftp.uploadDir(SRC_DIR, SFTP_REMOTE_PATH);
 
-  step(stepNumber++, TOTAL_STEPS, "Done");
+  step(4, TOTAL_STEPS, "Done");
   console.log("\n  Deployment complete.\n");
 } catch (err) {
   deployError = err;
