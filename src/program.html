@@ -61,7 +61,7 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <div class="fixed inset-0 z-0">
+    <div class="z-background fixed inset-0">
       <!-- This is a very quirky way of making the image appear right on mobile screens-->
       <img
         class="h-110 md:h-[50vh] md:min-h-95 md:max-h-160 w-full object-cover"
@@ -72,7 +72,7 @@
     </div>
 
     <nav
-      class="animate-fade-in-down fixed top-0 left-0 z-40 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
+      class="z-navbar animate-fade-in-down fixed top-0 left-0 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
     >
       <div class="flex h-full w-full items-center justify-between">
         <div class="flex items-center">
@@ -126,12 +126,12 @@
     </nav>
 
     <div
-      class="fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      class="z-mobile-menu-overlay fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
       id="menu-overlay"
     ></div>
 
     <aside
-      class="fixed top-0 right-0 z-[60] h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      class="z-mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
       id="side-drawer"
     >
       <div class="flex h-20 items-center justify-end px-5">
@@ -156,7 +156,7 @@
       </div>
     </aside>
 
-    <div class="relative z-10">
+    <main class="z-default relative">
       <section
         class="relative flex h-90 md:h-[50vh] md:min-h-95 md:max-h-160 mt-16 md:mt-0 flex-col items-center justify-center"
       >
@@ -184,8 +184,8 @@
       </section>
 
       <div class="min-h-screen bg-white py-20">
-        <section
-          class="animate-fade-in mx-auto max-w-[700px] px-7.5 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 scroll-mt-30 [animation-delay:0.3s]"
+        <article
+          class="animate-fade-in mx-auto max-w-175 px-7.5 text-[19px]/[28px] text-[#010101] scroll-mt-30 opacity-0 [animation-delay:0.3s]"
           id="content"
         >
           <p class="mb-15">
@@ -196,7 +196,7 @@
           </p>
 
           <p class="mb-3 font-semibold">Monday, September 14</p>
-          <div class="mb-[30px] grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
+          <div class="mb-7.5 grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
             <div>15:00-20:00</div>
             <div>Registration</div>
 
@@ -205,7 +205,7 @@
           </div>
 
           <p class="mb-3 font-semibold">Tuesday, September 15</p>
-          <div class="mb-[30px] grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
+          <div class="mb-7.5 grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
             <div>9:00-12:00</div>
             <div>Talks</div>
 
@@ -220,7 +220,7 @@
           </div>
 
           <p class="mb-3 font-semibold">Wednesday, September 16</p>
-          <div class="mb-[30px] grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
+          <div class="mb-7.5 grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
             <div>9:00-11:00</div>
             <div>Talks</div>
 
@@ -238,7 +238,7 @@
           </div>
 
           <p class="mb-3 font-semibold">Thursday, September 17</p>
-          <div class="mb-[30px] grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
+          <div class="mb-7.5 grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
             <div>9:00-12:00</div>
             <div>Talks</div>
 
@@ -256,7 +256,7 @@
           </div>
 
           <p class="mb-3 font-semibold">Friday, September 18</p>
-          <div class="mb-15 grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
+          <div class="mb-20 grid grid-cols-[110px_1fr] gap-x-5 text-[19px]/[36px]">
             <div>9:00-11:00</div>
             <div>Talks</div>
 
@@ -267,127 +267,133 @@
             <div>Closing remarks and farewell</div>
           </div>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide uppercase">SPECIAL FEATURES OF THE PROGRAM</h3>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide uppercase">
+              SPECIAL FEATURES OF THE PROGRAM
+            </h2>
 
-          <p class="mb-15">
-            The minisymposium dedicated to Karel Šulc (Wednesday afternoon) will summarize the work of this pioneer of
-            endocytobiology and discuss the current state of knowledge on bacterial endosymbionts of plant sap-feeding
-            insects, with particular emphasis on
-            <span class="italic">Candidatus</span>
-            Karelsulcia muelleri. As part of the minisymposium, a newly designed commemorative plaque dedicated to Karel
-            Šulc will be unveiled.
-          </p>
+            <p class="mb-15">
+              The minisymposium dedicated to Karel Šulc (Wednesday afternoon) will summarize the work of this pioneer of
+              endocytobiology and discuss the current state of knowledge on bacterial endosymbionts of plant sap-feeding
+              insects, with particular emphasis on
+              <span class="italic">Candidatus</span>
+              Karelsulcia muelleri. As part of the minisymposium, a newly designed commemorative plaque dedicated to
+              Karel Šulc will be unveiled.
+            </p>
 
-          <div class="mb-15 flex flex-col md:flex-row">
-            <div class="md:pr-10 mb-7.5 md:mb-0 w-35 md:w-42.5">
-              <img
-                class="w-full mb-2 rounded-lg shadow-md"
-                src="images/dul-michal.webp"
-                alt="Historical industrial architecture of the Michal Coalmine in Ostrava, a national cultural monument"
-              />
-              <div class="text-[12px]/[18px] text-gray-600 italic text-center">Michal Coalmine</div>
+            <div class="mb-15 flex flex-col md:flex-row">
+              <div class="md:pr-10 mb-7.5 md:mb-0 w-35 md:w-42.5">
+                <img
+                  class="w-full mb-2 rounded-lg shadow-md"
+                  src="images/dul-michal.webp"
+                  alt="Historical industrial architecture of the Michal Coalmine in Ostrava, a national cultural monument"
+                />
+                <div class="text-[12px]/[18px] text-gray-600 italic text-center">Michal Coalmine</div>
+              </div>
+
+              <div class="md:max-w-117.5">
+                <p>
+                  On Thursday afternoon, we will first take a guided tour of
+                  <a
+                    class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                    href="https://www.dul-michal.cz/en"
+                    target="_blank"
+                    >the Michal Coalmine</a
+                  >
+                  , located just 8 minutes by trolleybus from the meeting venue. This industrial heritage site has been
+                  preserved as a national cultural monument documenting the history of coal mining in Ostrava. Coal
+                  mining and heavy industry used to be the main drivers of economic growth in Ostrava and the
+                  surrounding region, profoundly shaping the city, the regional landscape, and the mentality of the
+                  local population. From the second half of the 19th century onwards, people arrived from distant parts
+                  of the Austro-Hungarian Empire to live and work in Ostrava. One such case was Karel Šulc, who came in
+                  1900 to serve as a physician to miners and their families in the village of Michálkovice&mdash;now a
+                  district of Ostrava&mdash;where
+                  <a
+                    class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                    href="https://www.dul-michal.cz/en"
+                    target="_blank"
+                    >the Michal Coalmine</a
+                  >
+                  is located. Visiting this site will not only allow participants to experience something of the
+                  atmosphere in which Karel Šulc conducted his research, but also to appreciate the impressive
+                  industrial setting and technical ingenuity of the mine.
+                </p>
+              </div>
             </div>
 
-            <div class="md:max-w-117.5">
-              <p>
-                On Thursday afternoon, we will first take a guided tour of
-                <a
-                  class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-                  href="https://www.dul-michal.cz/en"
-                  target="_blank"
-                  >the Michal Coalmine</a
-                >
-                , located just 8 minutes by trolleybus from the meeting venue. This industrial heritage site has been
-                preserved as a national cultural monument documenting the history of coal mining in Ostrava. Coal mining
-                and heavy industry used to be the main drivers of economic growth in Ostrava and the surrounding region,
-                profoundly shaping the city, the regional landscape, and the mentality of the local population. From the
-                second half of the 19th century onwards, people arrived from distant parts of the Austro-Hungarian
-                Empire to live and work in Ostrava. One such case was Karel Šulc, who came in 1900 to serve as a
-                physician to miners and their families in the village of Michálkovice&mdash;now a district of
-                Ostrava&mdash;where
-                <a
-                  class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-                  href="https://www.dul-michal.cz/en"
-                  target="_blank"
-                  >the Michal Coalmine</a
-                >
-                is located. Visiting this site will not only allow participants to experience something of the
-                atmosphere in which Karel Šulc conducted his research, but also to appreciate the impressive industrial
-                setting and technical ingenuity of the mine.
-              </p>
+            <div class="flex flex-col md:flex-row">
+              <div class="md:pr-10 mb-7.5 md:mb-0 w-35 md:w-42.5">
+                <img
+                  class="w-full mb-2 rounded-lg shadow-md"
+                  src="images/mendel-house.webp"
+                  alt="The birthplace of Gregor Mendel in Hynčice, host location for the conference dinner"
+                />
+                <div class="text-[12px]/[18px] text-gray-600 italic text-center">Mendel House</div>
+              </div>
+
+              <div class="md:max-w-117.5">
+                <p>
+                  After the tour, buses will be arranged to transport all participants from Michálkovice to
+                  <a
+                    class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                    href="https://www.mendelrodnydum.cz/en/"
+                    target="_blank"
+                    >the Mendel House in Hynčice</a
+                  >
+                  , where the conference dinner will take place. The expected return time to Ostrava is around 10:00 pm.
+                </p>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <div class="mb-15 flex flex-col md:flex-row">
-            <div class="md:pr-10 mb-7.5 md:mb-0 w-35 md:w-42.5">
-              <img
-                class="w-full mb-2 rounded-lg shadow-md"
-                src="images/mendel-house.webp"
-                alt="The birthplace of Gregor Mendel in Hynčice, host location for the conference dinner"
-              />
-              <div class="text-[12px]/[18px] text-gray-600 italic text-center">Mendel House</div>
-            </div>
+          <section>
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide uppercase">BEYOND THE OFFICIAL PROGRAM</h2>
 
-            <div class="md:max-w-117.5">
-              <p>
-                After the tour, buses will be arranged to transport all participants from Michálkovice to
-                <a
-                  class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-                  href="https://www.mendelrodnydum.cz/en/"
-                  target="_blank"
-                  >the Mendel House in Hynčice</a
-                >
-                , where the conference dinner will take place. The expected return time to Ostrava is around 10:00 pm.
-              </p>
-            </div>
-          </div>
+            <p class="mb-15">
+              When attending the ISE 2026 meeting in Ostrava, you may wish to explore the attractions of the city and
+              its surroundings, as well as special events taking place in the region during the meeting. Particularly
+              interesting events include:
+            </p>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide uppercase">BEYOND THE OFFICIAL PROGRAM</h3>
+            <p class="mb-6">
+              <a
+                class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                href="https://shf.cz/en/program/voces8/"
+                target="_blank"
+                >A vocal concert</a
+              >
+              on Thursday evening, September 17, held as part of the St. Wenceslas Music Festival.
+            </p>
 
-          <p class="mb-15">
-            When attending the ISE 2026 meeting in Ostrava, you may wish to explore the attractions of the city and its
-            surroundings, as well as special events taking place in the region during the meeting. Particularly
-            interesting events include:
-          </p>
+            <p class="mb-6">
+              <a
+                class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                href="https://www.natodays.cz/about-the-event"
+                target="_blank"
+                >NATO Days 2026</a
+              >, taking place on September 19-20 (the weekend immediately following the meeting) at Leoš Janáček Airport
+              Ostrava.
+            </p>
 
-          <p class="mb-6">
-            <a
-              class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-              href="https://shf.cz/en/program/voces8/"
-              target="_blank"
-              >A vocal concert</a
-            >
-            on Thursday evening, September 17, held as part of the St. Wenceslas Music Festival.
-          </p>
-
-          <p class="mb-6">
-            <a
-              class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-              href="https://www.natodays.cz/about-the-event"
-              target="_blank"
-              >NATO Days 2026</a
-            >, taking place on September 19-20 (the weekend immediately following the meeting) at Leoš Janáček Airport
-            Ostrava.
-          </p>
-
-          <p class="mb-10">
-            Classical music enthusiasts may also enjoy a visit to
-            <a
-              class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-              href="https://www.ic-hukvaldy.cz/"
-              target="_blank"
-              >Hukvaldy</a
-            >, a charming village near Ostrava (with a castle), where the famous Czech composer Leoš Janáček was born.
-          </p>
-        </section>
+            <p>
+              Classical music enthusiasts may also enjoy a visit to
+              <a
+                class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                href="https://www.ic-hukvaldy.cz/"
+                target="_blank"
+                >Hukvaldy</a
+              >, a charming village near Ostrava (with a castle), where the famous Czech composer Leoš Janáček was born.
+            </p>
+          </section>
+        </article>
       </div>
 
       <footer class="bg-[#F0F4F9]">
-        <div class="flex max-w-[700px] mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
-          <div class="w-[160px] md:w-[130px]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-40 md:w-32.5">
             <p>Stay tuned!</p>
           </div>
-          <div class="w-[160px] md:w-[130px]">
+          <div class="w-40 md:w-32.5">
             <ul>
               <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
@@ -397,6 +403,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   </body>
 </html>

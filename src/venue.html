@@ -61,7 +61,7 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <div class="fixed inset-0 z-0">
+    <div class="z-background fixed inset-0">
       <!-- This is a very quirky way of making the image appear right on mobile screens-->
       <img
         class="h-110 md:h-[50vh] md:min-h-95 md:max-h-160 w-full object-cover"
@@ -72,7 +72,7 @@
     </div>
 
     <nav
-      class="animate-fade-in-down fixed top-0 left-0 z-40 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
+      class="z-navbar animate-fade-in-down fixed top-0 left-0 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
     >
       <div class="flex h-full w-full items-center justify-between">
         <div class="flex items-center">
@@ -126,12 +126,12 @@
     </nav>
 
     <div
-      class="fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      class="z-mobile-menu-overlay fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
       id="menu-overlay"
     ></div>
 
     <aside
-      class="fixed top-0 right-0 z-[60] h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      class="z-mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
       id="side-drawer"
     >
       <div class="flex h-20 items-center justify-end px-5">
@@ -156,7 +156,7 @@
       </div>
     </aside>
 
-    <div class="relative z-10">
+    <main class="z-default relative">
       <section
         class="relative flex h-90 md:h-[50vh] md:min-h-95 md:max-h-160 mt-16 md:mt-0 flex-col items-center justify-center"
       >
@@ -184,8 +184,8 @@
       </section>
 
       <div class="min-h-screen bg-white py-20">
-        <section
-          class="animate-fade-in mx-auto max-w-[700px] px-7.5 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 scroll-mt-30 [animation-delay:0.3s]"
+        <article
+          class="animate-fade-in mx-auto max-w-175 px-7.5 text-[19px]/[28px] text-[#010101] scroll-mt-30 opacity-0 [animation-delay:0.3s]"
           id="content"
         >
           <div class="mb-15">
@@ -211,106 +211,112 @@
             </div>
           </div>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">HOW TO GET TO OSTRAVA</h3>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">HOW TO GET TO OSTRAVA</h2>
 
-          <div class="mb-10 flex-col md:flex-row flex">
-            <div class="mb-7.5 md:pr-10 md:w-85 md:mb-0">
-              <img
-                class="w-full mb-2 rounded-lg shadow-md"
-                src="./images/ostrava-map.webp"
-                alt="Map showing the strategic location of Ostrava in Central Europe relative to Prague, Vienna, and Krakow"
-              />
-              <div class="text-[12px]/[18px] text-gray-600 italic text-center">Location of Ostrava</div>
+            <div class="mb-15 flex-col md:flex-row flex">
+              <div class="mb-7.5 md:pr-10 md:w-85 md:mb-0">
+                <img
+                  class="w-full mb-2 rounded-lg shadow-md"
+                  src="./images/ostrava-map.webp"
+                  alt="Map showing the strategic location of Ostrava in Central Europe relative to Prague, Vienna, and Krakow"
+                />
+                <div class="text-[12px]/[18px] text-gray-600 italic text-center">Location of Ostrava</div>
+              </div>
+
+              <div class="md:max-w-75">
+                <p>
+                  Participants travelling from abroad may find it most convenient to first travel to one of the
+                  following major cities, all of which are connected to Ostrava by regular direct train services:
+                </p>
+              </div>
             </div>
 
-            <div class="md:max-w-75">
-              <p>
-                Participants travelling from abroad may find it most convenient to first travel to one of the following
-                major cities, all of which are connected to Ostrava by regular direct train services:
-              </p>
-            </div>
-          </div>
+            <ul class="mb-15 list-none flex flex-col gap-6">
+              <li>
+                <strong class="font-semibold">Prague</strong>
+                &ndash; approximately 3 hours by train from Prague Main Station; many direct trains per day
+              </li>
+              <li>
+                <strong class="font-semibold">Vienna</strong>
+                &ndash; approximately 3 hours by train from Vienna Main Station; direct trains every two hours (less
+                frequently at weekends)
+              </li>
+              <li>
+                <strong class="font-semibold">Krakow</strong>
+                &ndash; 2.5 to 3 hours (depending on the train) from Krakow Main Station; several direct trains per day
+              </li>
+            </ul>
 
-          <ul class="mb-6 ml-8 list-outside list-disc marker:text-[#00B497]">
-            <li class="mb-6 pl-2">
-              <strong class="font-semibold">Prague</strong>
-              &ndash; approximately 3 hours by train from Prague Main Station; many direct trains per day
-            </li>
-            <li class="mb-6 pl-2">
-              <strong class="font-semibold">Vienna</strong>
-              &ndash; approximately 3 hours by train from Vienna Main Station; direct trains every two hours (less
-              frequently at weekends)
-            </li>
-            <li class="mb-6 pl-2">
-              <strong class="font-semibold">Krakow</strong>
-              &ndash; 2.5 to 3 hours (depending on the train) from Krakow Main Station; several direct trains per day
-            </li>
-          </ul>
+            <p>
+              Other options include flying to Bratislava (Slovakia) or Katowice (Poland) and continuing to Ostrava by
+              bus or train. In addition, Ostrava has
+              <a
+                class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                href="https://www.airport-ostrava.cz/en/"
+                target="_blank"
+                >a small airport located close to the city</a
+              >
+              with direct flights from a limited number of destinations, notably including London Stansted, Girona, and
+              Warsaw.
+            </p>
+          </section>
 
-          <p class="mb-20">
-            Other options include flying to Bratislava (Slovakia) or Katowice (Poland) and continuing to Ostrava by bus
-            or train. In addition, Ostrava has
-            <a
-              class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-              href="https://www.airport-ostrava.cz/en/"
-              target="_blank"
-              >a small airport located close to the city</a
-            >
-            with direct flights from a limited number of destinations, notably including London Stansted, Girona, and
-            Warsaw.
-          </p>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">HOW TO GET TO THE FACULTY OF SCIENCE</h2>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">HOW TO GET TO THE FACULTY OF SCIENCE</h3>
+            <p class="mb-15">
+              The Faculty of Science is located in Building L of the University of Ostrava, situated at
+              <strong class="font-semibold">Chittussiho 983/10, 710 00 Slezská Ostrava</strong>
+              . The building is easily accessible by public transport, with several bus and trolleybus stops within
+              walking distance of the venue.
+            </p>
 
-          <p class="mb-6">
-            The Faculty of Science is located in Building L of the University of Ostrava, situated at
-            <strong class="font-semibold">Chittussiho 983/10, 710 00 Slezská Ostrava</strong>
-            . The building is easily accessible by public transport, with several bus and trolleybus stops within
-            walking distance of the venue.
-          </p>
+            <iframe
+              class="mb-20"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4327.058257814682!2d18.301800581635355!3d49.8446327052738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713e32a4d810de3%3A0xecbf30abaaf6e8e7!2sUniversity%20of%20Ostrava%20-%20Faculty%20of%20Science%20(Building%20L)!5e0!3m2!1sen!2scz!4v1770549951920!5m2!1sen!2scz"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
 
-          <iframe
-            class="mb-20"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4327.058257814682!2d18.301800581635355!3d49.8446327052738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713e32a4d810de3%3A0xecbf30abaaf6e8e7!2sUniversity%20of%20Ostrava%20-%20Faculty%20of%20Science%20(Building%20L)!5e0!3m2!1sen!2scz!4v1770549951920!5m2!1sen!2scz"
-            width="100%"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            <p>
+              We will be happy to help you find the best travel option from your location&mdash;please feel free to
+              contact us at any of the following email addresses:
+              <a
+                class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                href="mailto:katerina.sedlakova@osu.cz"
+                >katerina.sedlakova@osu.cz</a
+              >
+              and
+              <a
+                class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
+                href="mailto:tereza.mlcuchova@osu.cz"
+                >tereza.mlcuchova@osu.cz</a
+              >
+              .
+            </p>
+          </section>
 
-          <p class="mb-20">
-            We will be happy to help you find the best travel option from your location&mdash;please feel free to
-            contact us at any of the following email addresses:
-            <a
-              class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-              href="mailto:katerina.sedlakova@osu.cz"
-              >katerina.sedlakova@osu.cz</a
-            >
-            and
-            <a
-              class="font-medium text-[#00B497] underline decoration-2 underline-offset-4 transition-colors duration-300 hover:text-[#00806a]"
-              href="mailto:tereza.mlcuchova@osu.cz"
-              >tereza.mlcuchova@osu.cz</a
-            >
-            .
-          </p>
+          <section>
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">
+              RECOMMENDATIONS FOR ACCOMMODATION IN OSTRAVA
+            </h2>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">
-            RECOMMENDATIONS FOR ACCOMMODATION IN OSTRAVA
-          </h3>
-
-          <p class="mb-10">Coming soon.</p>
-        </section>
+            <p>Coming soon.</p>
+          </section>
+        </article>
       </div>
 
       <footer class="bg-[#F0F4F9]">
-        <div class="flex max-w-[700px] mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
-          <div class="w-[160px] md:w-[130px]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-40 md:w-32.5">
             <p>Stay tuned!</p>
           </div>
-          <div class="w-[160px] md:w-[130px]">
+          <div class="w-40 md:w-32.5">
             <ul>
               <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
@@ -320,6 +326,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   </body>
 </html>

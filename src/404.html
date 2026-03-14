@@ -62,7 +62,7 @@
   </head>
   <body>
     <nav
-      class="animate-fade-in-down fixed top-0 left-0 z-40 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
+      class="z-navbar animate-fade-in-down fixed top-0 left-0 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
     >
       <div class="flex h-full w-full items-center justify-between">
         <div class="flex items-center">
@@ -116,12 +116,12 @@
     </nav>
 
     <div
-      class="fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      class="z-mobile-menu-overlay fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
       id="menu-overlay"
     ></div>
 
     <aside
-      class="fixed top-0 right-0 z-[60] h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      class="z-mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
       id="side-drawer"
     >
       <div class="flex h-20 items-center justify-end px-5">
@@ -146,20 +146,18 @@
       </div>
     </aside>
 
-    <div class="relative z-10 min-h-screen flex flex-col">
-      <section
-        class="relative flex flex-grow flex-col items-center justify-center mx-auto max-w-[700px] px-7.5 py-10 mt-16"
-      >
-        <h1
-          class="animate-fade-in-up text-[48px]/[56px] font-semibold opacity-0 mb-2 text-center [animation-delay:0.2s]"
-        >
-          Yikes! Something went wrong...
-        </h1>
+    <main class="z-default relative min-h-screen flex flex-col">
+      <article class="relative flex grow flex-col items-center justify-center mx-auto max-w-175 px-7.5 py-10 mt-16">
+        <hgroup class="mb-2 text-center">
+          <h1 class="animate-fade-in-up text-[48px]/[56px] font-semibold opacity-0 mb-2 [animation-delay:0.2s]">
+            Yikes! Something went wrong...
+          </h1>
 
-        <p class="font-regular animate-fade-in-up text-[16px]/[24px] opacity-0 mb-2 text-center [animation-delay:0.3s]">
-          It seems this link has undergone an unexpected mutation or simply doesn't exist. Don't worry, even in
-          endocytobiology, things sometimes end up where they shouldn't.
-        </p>
+          <p class="font-regular animate-fade-in-up text-[16px]/[24px] opacity-0 [animation-delay:0.3s]">
+            It seems this link has undergone an unexpected mutation or simply doesn't exist. Don't worry, even in
+            endocytobiology, things sometimes end up where they shouldn't.
+          </p>
+        </hgroup>
 
         <small
           class="font-regular animate-fade-in-up text-[12px]/[20px] text-gray-300 opacity-0 text-center mb-6 [animation-delay:0.4s]"
@@ -172,14 +170,14 @@
         >
           TAKE ME HOME
         </a>
-      </section>
+      </article>
 
       <footer class="bg-[#F0F4F9]">
-        <div class="flex max-w-[700px] mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
-          <div class="w-[160px] md:w-[130px]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-40 md:w-32.5">
             <p>Stay tuned!</p>
           </div>
-          <div class="w-[160px] md:w-[130px]">
+          <div class="w-40 md:w-32.5">
             <ul>
               <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
@@ -189,6 +187,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   </body>
 </html>

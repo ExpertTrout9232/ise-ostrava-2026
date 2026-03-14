@@ -61,7 +61,7 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <div class="fixed inset-0 z-0">
+    <div class="z-background fixed inset-0">
       <!-- This is a very quirky way of making the image appear right on mobile screens-->
       <img
         class="h-110 md:h-[50vh] md:min-h-95 md:max-h-160 w-full object-cover"
@@ -72,7 +72,7 @@
     </div>
 
     <nav
-      class="animate-fade-in-down fixed top-0 left-0 z-40 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
+      class="z-navbar animate-fade-in-down fixed top-0 left-0 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
     >
       <div class="flex h-full w-full items-center justify-between">
         <div class="flex items-center">
@@ -126,12 +126,12 @@
     </nav>
 
     <div
-      class="fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      class="z-mobile-menu-overlay fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
       id="menu-overlay"
     ></div>
 
     <aside
-      class="fixed top-0 right-0 z-[60] h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      class="z-mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
       id="side-drawer"
     >
       <div class="flex h-20 items-center justify-end px-5">
@@ -156,7 +156,7 @@
       </div>
     </aside>
 
-    <div class="relative z-10">
+    <main class="z-default relative">
       <section
         class="relative flex h-90 md:h-[50vh] md:min-h-95 md:max-h-160 mt-16 md:mt-0 flex-col items-center justify-center"
       >
@@ -184,8 +184,8 @@
       </section>
 
       <div class="min-h-screen bg-white py-20">
-        <section
-          class="animate-fade-in mx-auto max-w-[700px] px-7.5 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 scroll-mt-30 [animation-delay:0.3s]"
+        <article
+          class="animate-fade-in mx-auto max-w-175 px-7.5 text-[19px]/[28px] text-[#010101] scroll-mt-30 opacity-0 [animation-delay:0.3s]"
           id="content"
         >
           <p class="mb-6">
@@ -193,15 +193,15 @@
             <strong class="font-semibold">the 15th of June</strong>. The conference fee rates will be announced later
             and will depend on how much external support we manage to secure.
           </p>
-        </section>
+        </article>
       </div>
 
       <footer class="bg-[#F0F4F9]">
-        <div class="flex max-w-[700px] mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
-          <div class="w-[160px] md:w-[130px]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-40 md:w-32.5">
             <p>Stay tuned!</p>
           </div>
-          <div class="w-[160px] md:w-[130px]">
+          <div class="w-40 md:w-32.5">
             <ul>
               <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
@@ -211,6 +211,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   </body>
 </html>

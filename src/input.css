@@ -21,6 +21,12 @@
 
   --breakpoint-md: 688px;
 
+  --z-index-background: -10;
+  --z-index-default: 0;
+  --z-index-navbar: 30;
+  --z-index-mobile-menu-overlay: 40;
+  --z-index-mobile-menu: 50;
+
   --animate-darken: darken 0.8s ease-out forwards;
   --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
   --animate-fade-in-down: fade-in-down 0.5s ease-out forwards;

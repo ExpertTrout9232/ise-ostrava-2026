@@ -61,7 +61,7 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <div class="fixed inset-0 z-0">
+    <div class="z-background fixed inset-0">
       <!-- This is a very quirky way of making the image appear right on mobile screens-->
       <img
         class="h-[560px] md:h-full w-full object-cover [clip-path:inset(0_0_100px_0)] md:[clip-path:none]"
@@ -72,7 +72,7 @@
     </div>
 
     <nav
-      class="animate-fade-in-down fixed top-0 left-0 z-40 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
+      class="z-navbar animate-fade-in-down fixed top-0 left-0 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
     >
       <div class="flex h-full w-full items-center justify-between">
         <div class="flex items-center">
@@ -126,12 +126,12 @@
     </nav>
 
     <div
-      class="fixed inset-0 z-50 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      class="z-mobile-menu-overlay fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
       id="menu-overlay"
     ></div>
 
     <aside
-      class="fixed top-0 right-0 z-[60] h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      class="z-mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
       id="side-drawer"
     >
       <div class="flex h-20 items-center justify-end px-5">
@@ -156,19 +156,20 @@
       </div>
     </aside>
 
-    <div class="relative z-10">
-      <!-- This is also pretty quirky -->
-      <section class="relative flex h-[360px] mt-16 md:mt-0 md:h-screen flex-col items-center justify-center">
-        <h1
-          class="animate-fade-in-up text-[32px]/[40px] md:text-[48px]/[56px] xl:text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]"
-        >
-          ISE 2026 Ostrava
-        </h1>
-        <h2
-          class="font-regular animate-fade-in-up text-[16px]/[24px] md:text-[24px]/[32px] xl:text-[36px]/[44px] text-white opacity-0 [animation-delay:0.3s]"
-        >
-          Czech Republic &nbsp;|&nbsp; September 14th to 18th
-        </h2>
+    <main class="z-default relative">
+      <section class="relative flex h-90 mt-16 md:mt-0 md:h-screen flex-col items-center justify-center">
+        <hgroup class="text-center">
+          <h1
+            class="animate-fade-in-up text-[32px]/[40px] md:text-[48px]/[56px] xl:text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]"
+          >
+            ISE 2026 Ostrava
+          </h1>
+          <p
+            class="animate-fade-in-up text-[16px]/[24px] md:text-[24px]/[32px] xl:text-[36px]/[44px] text-white opacity-0 [animation-delay:0.3s]"
+          >
+            Czech Republic &nbsp;|&nbsp; September 14th to 18th
+          </p>
+        </hgroup>
 
         <a
           class="hidden md:block animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]"
@@ -188,8 +189,8 @@
       </section>
 
       <div class="min-h-screen bg-white py-20">
-        <section
-          class="animate-fade-in mx-auto max-w-[700px] px-7.5 text-[19px]/[28px] tracking-normal text-[#010101] opacity-0 scroll-mt-30 [animation-delay:0.3s]"
+        <article
+          class="animate-fade-in mx-auto max-w-175 px-7.5 text-[19px]/[28px] text-[#010101] scroll-mt-30 opacity-0 [animation-delay:0.3s]"
           id="content"
         >
           <p class="mb-15 text-center">
@@ -248,7 +249,7 @@
             </div>
           </div>
 
-          <div class="mb-15 flex flex-col md:flex-row">
+          <div class="mb-20 flex flex-col md:flex-row">
             <div class="md:pr-10 mb-7.5 md:mb-0 w-35 md:w-42.5">
               <img
                 class="w-full mb-2 rounded-lg shadow-md"
@@ -275,254 +276,284 @@
             </div>
           </div>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">CONFIRMED SPEAKERS</h3>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">CONFIRMED SPEAKERS</h2>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://www.cepickalab.com/"
-            target="_blank"
-          >
-            <span>Ivan Čepička</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">Charles University, Prague, Czech Republic</p>
+            <ul class="list-none flex flex-col gap-6">
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://www.cepickalab.com/"
+                  target="_blank"
+                >
+                  <span>Ivan Čepička</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">Charles University, Prague, Czech Republic</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://www.protistologie.cz/hampllab/03team-1.html"
-            target="_blank"
-          >
-            <span>Vladimír Hampl</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">Charles University, Prague, Czech Republic</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://www.protistologie.cz/hampllab/03team-1.html"
+                  target="_blank"
+                >
+                  <span>Vladimír Hampl</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">Charles University, Prague, Czech Republic</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://ibe.biol.uw.edu.pl/en/people/karnkowska/"
-            target="_blank"
-          >
-            <span>Anna Karnkowska</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">University of Warsaw, Warsaw, Poland</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://ibe.biol.uw.edu.pl/en/people/karnkowska/"
+                  target="_blank"
+                >
+                  <span>Anna Karnkowska</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">University of Warsaw, Warsaw, Poland</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://btiscience.org/fay-wei-li/"
-            target="_blank"
-          >
-            <span>Fay-Wei Li</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">Boyce Thompson Institute, Ithaca, USA</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://btiscience.org/fay-wei-li/"
+                  target="_blank"
+                >
+                  <span>Fay-Wei Li</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">Boyce Thompson Institute, Ithaca, USA</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://www.researchgate.net/profile/F-Vanessa-Loiacono-2"
-            target="_blank"
-          >
-            <span>F. Vanessa Loiacono</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">Charles University, Prague, Czech Republic</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://www.researchgate.net/profile/F-Vanessa-Loiacono-2"
+                  target="_blank"
+                >
+                  <span>F. Vanessa Loiacono</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">Charles University, Prague, Czech Republic</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://symbio.eko.uj.edu.pl/en_GB/staff/piotr-lukasik"
-            target="_blank"
-          >
-            <span>Piotr Łukasik</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">Jagiellonian University, Kraków, Poland</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://symbio.eko.uj.edu.pl/en_GB/staff/piotr-lukasik"
+                  target="_blank"
+                >
+                  <span>Piotr Łukasik</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">Jagiellonian University, Kraków, Poland</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://www.mpi-bremen.de/en/Greenhouse-Gases-Research-Group-2/Jana-Milucka.html"
-            target="_blank"
-          >
-            <span>Jana Milucka</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">Max Planck Institute for Marine Microbiology, Bremen, Germany</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://www.mpi-bremen.de/en/Greenhouse-Gases-Research-Group-2/Jana-Milucka.html"
+                  target="_blank"
+                >
+                  <span>Jana Milucka</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">Max Planck Institute for Marine Microbiology, Bremen, Germany</p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://www.paru.cas.cz/en/staff/profile/22/"
-            target="_blank"
-          >
-            <span>Miroslav Oborník</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-6 text-[19px]/[32px] italic">
-            Biology Centre, Czech Academy of Sciences, České Budějovice, Czech Republic
-          </p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://www.paru.cas.cz/en/staff/profile/22/"
+                  target="_blank"
+                >
+                  <span>Miroslav Oborník</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">
+                  Biology Centre, Czech Academy of Sciences, České Budějovice, Czech Republic
+                </p>
+              </li>
 
-          <a
-            class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
-            href="https://web.osu.cz/~Yurchenko/index.php"
-            target="_blank"
-          >
-            <span>Vyacheslav Yurchenko</span>
-            <svg
-              class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-              />
-            </svg>
-          </a>
-          <p class="mb-20 text-[19px]/[32px] italic">University of Ostrava, Ostrava, Czech Republic</p>
+              <li>
+                <a
+                  class="group inline-flex items-center gap-2 text-[19px]/[32px] font-semibold"
+                  href="https://web.osu.cz/~Yurchenko/index.php"
+                  target="_blank"
+                >
+                  <span>Vyacheslav Yurchenko</span>
+                  <svg
+                    class="h-[0.8em] w-[0.8em] text-gray-300 transition-colors group-hover:text-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+                <p class="text-[19px]/[32px] italic">University of Ostrava, Ostrava, Czech Republic</p>
+              </li>
+            </ul>
+          </section>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">PROGRAM & FORMAT</h3>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">PROGRAM & FORMAT</h2>
 
-          <p class="mb-6">
-            The final program will depend on the number of participants and
-            <strong class="font-semibold">will be announced after the registration deadline.</strong>
-          </p>
-          <p class="mb-20">
-            Please note that the meeting is scheduled to take place
-            <strong class="font-semibold">in person only</strong>
-            . Streaming of presentations will not be available.
-          </p>
+            <p class="mb-6">
+              The final program will depend on the number of participants and
+              <strong class="font-semibold">will be announced after the registration deadline.</strong>
+            </p>
+            <p>
+              Please note that the meeting is scheduled to take place
+              <strong class="font-semibold">in person only</strong>
+              . Streaming of presentations will not be available.
+            </p>
+          </section>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">EARLY CAREER PRIZES</h3>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">EARLY CAREER PRIZES</h2>
 
-          <p class="mb-6">
-            During the symposium, two prizes will be awarded among participating early career scientists (students and
-            postdocs within the first four years after obtaining their degree):
-          </p>
-          <p>
-            <strong class="font-semibold">ISE Prize</strong>
-            for an outstanding oral presentation
-          </p>
-          <p class="mb-20">
-            <strong class="font-semibold">Peter-Sitte Prize</strong>
-            for an outstanding poster presentation
-          </p>
+            <p class="mb-6">
+              During the symposium, two prizes will be awarded among participating early career scientists (students and
+              postdocs within the first four years after obtaining their degree):
+            </p>
+            <p>
+              <strong class="font-semibold">ISE Prize</strong>
+              for an outstanding oral presentation
+            </p>
+            <p>
+              <strong class="font-semibold">Peter-Sitte Prize</strong>
+              for an outstanding poster presentation
+            </p>
+          </section>
 
-          <h3 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">ORGANIZER</h3>
+          <section class="mb-20">
+            <h2 class="mb-7 text-[18px]/[28px] font-semibold tracking-wide">ORGANIZER</h2>
 
-          <p class="font-semibold">Marek Eliáš</p>
-          <p>University of Ostrava</p>
-          <p>Faculty of Science, Department of Biology and Ecology</p>
-          <p>Chittussiho 10, 710 00 Ostrava</p>
-          <p>Czech Republic</p>
-          <p class="mb-20">Email: marekelias1978@gmail.com</p>
+            <address class="not-italic">
+              <strong class="font-semibold">Marek Eliáš</strong><br />
+              University of Ostrava<br />
+              Faculty of Science, Department of Biology and Ecology<br />
+              Chittussiho 10, 710 00 Ostrava<br />
+              Czech Republic<br />
+              Email: marekelias1978@gmail.com
+            </address>
+          </section>
 
-          <div class="w-full text-center md:text-left mb-6">
+          <div class="text-center md:text-left">
             <a
               class="inline-flex items-center justify-center border-2 border-[#00B497] px-10 py-2.5 rounded-sm text-[16px]/[28px] font-semibold tracking-wide text-[#00B497] hover:bg-[#00B497] hover:text-white transition-colors duration-300"
               href="mailto:marekelias1978@gmail.com"
@@ -530,15 +561,15 @@
               GET IN TOUCH
             </a>
           </div>
-        </section>
+        </article>
       </div>
 
       <footer class="bg-[#F0F4F9]">
-        <div class="flex max-w-[700px] mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
-          <div class="w-[160px] md:w-[130px]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-40 md:w-32.5">
             <p>Stay tuned!</p>
           </div>
-          <div class="w-[160px] md:w-[130px]">
+          <div class="w-40 md:w-32.5">
             <ul>
               <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
@@ -548,6 +579,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   </body>
 </html>
