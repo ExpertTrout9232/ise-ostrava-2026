@@ -1,7 +1,7 @@
 /*
 Production deployment script.
 
-Builds the site, clears the remote directory over SFTP, and uploads src/.
+Builds the site, clears the remote directory over SFTP, and uploads src/ + public/.
 Run via: npm run deploy
 
 Required variables in .env (see .env.example):
@@ -13,11 +13,14 @@ SFTP_PORT (default: 22)
 
 import "dotenv/config";
 import SftpClient from "ssh2-sftp-client";
-import { resolve, dirname } from "path";
+import { cp, mkdtemp, readdir, rm, stat } from "fs/promises";
+import { resolve, dirname, relative, sep } from "path";
+import { tmpdir } from "os";
 import { fileURLToPath } from "url";
 
 const ROOT_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC_DIR = resolve(ROOT_DIR, "src");
+const PUBLIC_DIR = resolve(ROOT_DIR, "public");
 
 function step(n, total, message) {
   console.log(`\n  [${n}/${total}] ${message}`);
@@ -32,6 +35,73 @@ function abort(message, hint) {
   if (hint) console.error(`         ${hint}`);
   console.error("");
   process.exit(1);
+}
+
+async function isDirectory(path) {
+  try {
+    return (await stat(path)).isDirectory();
+  } catch (err) {
+    if (err.code === "ENOENT") return false;
+    throw err;
+  }
+}
+
+async function collectRelativeFiles(baseDir, currentDir = baseDir, files = []) {
+  const entries = await readdir(currentDir, { withFileTypes: true });
+  for (const entry of entries) {
+    const entryPath = resolve(currentDir, entry.name);
+    if (entry.isDirectory()) {
+      await collectRelativeFiles(baseDir, entryPath, files);
+      continue;
+    }
+    if (entry.isFile()) {
+      files.push(relative(baseDir, entryPath).split(sep).join("/"));
+    }
+  }
+  return files;
+}
+
+function listConflicts(srcFiles, publicFiles) {
+  const srcSet = new Set(srcFiles);
+  return publicFiles.filter((file) => srcSet.has(file)).sort();
+}
+
+async function prepareLocalUploadBundle() {
+  if (!(await isDirectory(SRC_DIR))) {
+    throw new Error(`Local source directory not found: "${SRC_DIR}"`);
+  }
+
+  const srcFiles = await collectRelativeFiles(SRC_DIR);
+  const hasPublicDir = await isDirectory(PUBLIC_DIR);
+  const publicFiles = hasPublicDir ? await collectRelativeFiles(PUBLIC_DIR) : [];
+  const conflicts = listConflicts(srcFiles, publicFiles);
+
+  if (conflicts.length > 0) {
+    const maxPreview = 10;
+    const preview = conflicts.slice(0, maxPreview).join(", ");
+    const extra =
+      conflicts.length > maxPreview ? ` (+${conflicts.length - maxPreview} more)` : "";
+    throw new Error(
+      `Path conflict${conflicts.length > 1 ? "s" : ""} detected between src/ and public/: ${preview}${extra}.`,
+    );
+  }
+
+  const deployDir = await mkdtemp(resolve(tmpdir(), "ise-deploy-"));
+  await cp(SRC_DIR, deployDir, { recursive: true, force: true });
+
+  if (hasPublicDir) {
+    await cp(PUBLIC_DIR, deployDir, { recursive: true, force: true });
+  } else {
+    info("public/ directory not found — deploying src/ only.");
+  }
+
+  info(
+    `Prepared ${srcFiles.length + publicFiles.length} file${
+      srcFiles.length + publicFiles.length === 1 ? "" : "s"
+    } for upload (${srcFiles.length} from src${hasPublicDir ? `, ${publicFiles.length} from public` : ""}).`,
+  );
+
+  return deployDir;
 }
 
 const REQUIRED_VARS = ["SFTP_HOST", "SFTP_USER", "SFTP_PASSWORD", "SFTP_REMOTE_PATH"];
@@ -101,17 +171,21 @@ function describeConnectionError(err) {
   return null;
 }
 
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 5;
 
 console.log("\n  ISE 2026 Ostrava — Production deployment");
-console.log(`  Local  : ${SRC_DIR}`);
+console.log(`  Local  : ${SRC_DIR} + ${PUBLIC_DIR}`);
 console.log(`  Remote : ${SFTP_HOST}:${SFTP_PORT}  ${SFTP_REMOTE_PATH}`);
 
 const sftp = new SftpClient("ise-deploy");
 let deployError = null;
+let localUploadDir = null;
 
 try {
-  step(1, TOTAL_STEPS, "Connecting");
+  step(1, TOTAL_STEPS, "Preparing local upload bundle");
+  localUploadDir = await prepareLocalUploadBundle();
+
+  step(2, TOTAL_STEPS, "Connecting");
   await sftp.connect({
     host: SFTP_HOST,
     port: SFTP_PORT,
@@ -120,19 +194,22 @@ try {
     readyTimeout: 20_000,
   });
 
-  step(2, TOTAL_STEPS, "Preparing remote directory");
+  step(3, TOTAL_STEPS, "Preparing remote directory");
   await ensureRemoteDir(sftp, SFTP_REMOTE_PATH);
   await clearRemoteDir(sftp, SFTP_REMOTE_PATH);
 
-  step(3, TOTAL_STEPS, "Uploading files");
-  await sftp.uploadDir(SRC_DIR, SFTP_REMOTE_PATH);
+  step(4, TOTAL_STEPS, "Uploading files");
+  await sftp.uploadDir(localUploadDir, SFTP_REMOTE_PATH);
 
-  step(4, TOTAL_STEPS, "Done");
+  step(5, TOTAL_STEPS, "Done");
   console.log("\n  Deployment complete.\n");
 } catch (err) {
   deployError = err;
 } finally {
   await sftp.end().catch(() => {});
+  if (localUploadDir) {
+    await rm(localUploadDir, { recursive: true, force: true }).catch(() => {});
+  }
 }
 
 if (deployError) {
