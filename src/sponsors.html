@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' https://cloud.umami.is;
+        object-src 'none';
+        base-uri 'self';
+        style-src 'self' 'unsafe-inline';
+        font-src 'self';
+        img-src 'self' data:;
+        frame-src 'self' https://www.google.com;
+        frame-ancestors 'none';
+        connect-src 'self' https://api-gateway.umami.dev;
+      "
+    />
+
+    <title>Sponsors | ISE 2026 Ostrava</title>
+    <meta name="keywords" content="ISE 2026, Ostrava conference, endocytobiology, symbiosis, biological colloquium" />
+    <meta
+      name="description"
+      content="Sponsors of ISE 2026 Ostrava, the 16th International Colloquium on Endocytobiology and Symbiosis."
+    />
+    <meta name="author" content="Marek Eliáš, University of Ostrava" />
+
+    <link href="https://ise-2026.osu.cz/sponsors.html" rel="canonical" />
+
+    <link type="font/ttf" href="./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf" rel="preload" as="font" crossorigin />
+
+    <link type="image/x-icon" href="./favicon.ico" rel="icon" sizes="any" />
+    <link type="image/png" href="./favicon-512.png" rel="icon" sizes="512x512" />
+    <link href="./favicon-512.png" rel="apple-touch-icon" />
+
+    <link href="./output.css" rel="stylesheet" />
+
+    <script src="./js/main.js" defer></script>
+
+    <script
+      data-website-id="66d8ead8-8e65-407d-abba-46e7d58255bd"
+      data-domains="ise-2026.osu.cz"
+      src="https://cloud.umami.is/script.js"
+      defer
+    ></script>
+
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta
+      property="og:title"
+      content="ISE 2026 Ostrava | 16th International Colloquium on Endocytobiology and Symbiosis"
+    />
+    <meta
+      property="og:description"
+      content="Join us in Ostrava for the 16th International Colloquium on Endocytobiology and Symbiosis."
+    />
+    <meta property="og:image" content="https://ise-2026.osu.cz/images/og-preview.jpg" />
+    <meta property="og:url" content="https://ise-2026.osu.cz/" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <div class="z-background fixed inset-0">
+      <!-- TODO: Change the image here-->
+      <!-- This is a very quirky way of making the image appear right on mobile screens-->
+      <img
+        class="h-110 md:h-[50vh] md:min-h-95 md:max-h-160 w-full object-cover"
+        src="./images/osu-prf.webp"
+        alt="Detailed view of the Faculty of Science building facade at the University of Ostrava, the main venue for ISE 2026 conference"
+      />
+      <div class="animate-darken absolute inset-0"></div>
+    </div>
+
+    <nav
+      class="z-navbar animate-fade-in-down fixed top-0 left-0 h-20 md:h-25 w-full bg-white px-7.5 md:px-15 text-black opacity-0 [animation-delay:0.5s]"
+    >
+      <div class="flex h-full w-full items-center justify-between">
+        <div class="flex items-center">
+          <a class="group flex items-center gap-3 md:gap-5 text-[19px]/[28px]" href="./#">
+            <img class="md:h-11 object-contain h-7.5" src="./images/logo.jpg" alt="ISE 2026 Ostrava official logo" />
+
+            <div class="grid grid-cols-1 grid-rows-1 place-items-center">
+              <span class="col-start-1 row-start-1 font-medium transition-opacity duration-300 group-hover:opacity-0">
+                ISE 2026 Ostrava
+              </span>
+              <span
+                class="col-start-1 row-start-1 font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                ISE 2026 Ostrava
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <div class="font-regular hidden xl:flex gap-11 text-[19px]/[28px]">
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./#">
+            <span class="invisible col-start-1 row-start-1 font-semibold">Home</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Home</span>
+          </a>
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./program.html#">
+            <span class="invisible col-start-1 row-start-1 font-semibold">Program</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Program</span>
+          </a>
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./registration.html#">
+            <span class="invisible col-start-1 row-start-1 font-semibold">Registration</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium"
+              >Registration</span
+            >
+          </a>
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./venue.html#">
+            <span class="invisible col-start-1 row-start-1 font-semibold">Venue</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Venue</span>
+          </a>
+        </div>
+
+        <button
+          class="xl:hidden text-black focus:outline-none cursor-pointer hover:opacity-60 transition-opacity duration-200"
+          id="menu-open-btn"
+          aria-label="Open menu"
+        >
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      class="z-mobile-menu-overlay fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"
+      id="menu-overlay"
+    ></div>
+
+    <aside
+      class="z-mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+      id="side-drawer"
+    >
+      <div class="flex h-20 items-center justify-end px-5">
+        <button
+          class="p-2 text-black focus:outline-none cursor-pointer hover:opacity-60 transition-opacity duration-200"
+          id="menu-close-btn"
+          aria-label="Close menu"
+        >
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-6 px-8 py-4 text-[20px]/[28px]">
+        <a class="hover:font-medium transition-all" href="./#">Home</a>
+        <a class="hover:font-medium transition-all" href="./program.html#">Program</a>
+        <a class="hover:font-medium transition-all" href="./registration.html#">Registration</a>
+        <a class="hover:font-medium transition-all" href="./venue.html#">Venue</a>
+        <!-- <a class="hover:font-medium transition-all" href="./#">Sponsors</a>
+        <a class="hover:font-medium transition-all" href="./#">Travel Grant</a> -->
+      </div>
+    </aside>
+
+    <main class="z-default relative">
+      <section
+        class="relative flex h-90 md:h-[50vh] md:min-h-95 md:max-h-160 mt-16 md:mt-0 md:pt-8 flex-col items-center justify-center"
+      >
+        <h1
+          class="animate-fade-in-up text-[48px]/[56px] md:text-[72px]/[80px] xl:text-[72px]/[80px] font-semibold text-white opacity-0 [animation-delay:0.2s]"
+        >
+          Sponsors
+        </h1>
+
+        <a
+          class="hidden md:block animate-fade-in-up absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 [animation-delay:0.7s] hover:text-[#00B497]"
+          href="#content"
+        >
+          <svg
+            class="h-12 w-12 animate-bounce"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+          </svg>
+        </a>
+      </section>
+
+      <div class="min-h-screen bg-white py-20">
+        <article
+          class="animate-fade-in mx-auto max-w-175 px-7.5 text-[19px]/[28px] text-[#010101] scroll-mt-30 opacity-0 [animation-delay:0.3s]"
+          id="content"
+        >
+          <p class="mb-6">Placeholder</p>
+        </article>
+      </div>
+
+      <footer class="bg-[#F0F4F9]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+          <div class="w-40 md:w-32.5">
+            <p>Stay tuned!</p>
+          </div>
+          <div class="w-40 md:w-32.5">
+            <ul>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./#">Home</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./registration.html#">Registration</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./venue.html#">Venue</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
