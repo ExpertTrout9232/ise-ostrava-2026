@@ -63,12 +63,11 @@
   </head>
   <body>
     <div class="z-background fixed inset-0">
-      <!-- TODO: Change the image here-->
       <!-- This is a very quirky way of making the image appear right on mobile screens-->
       <img
         class="h-110 md:h-[50vh] md:min-h-95 md:max-h-160 w-full object-cover"
-        src="./images/osu-prf.webp"
-        alt="Detailed view of the Faculty of Science building facade at the University of Ostrava, the main venue for ISE 2026 conference"
+        src="./images/osu-prf-deans-office.webp"
+        alt="Dean's office of the Faculty of Science, University of Ostrava"
       />
       <div class="animate-darken absolute inset-0"></div>
     </div>
@@ -113,6 +112,10 @@
             <span class="invisible col-start-1 row-start-1 font-semibold">Venue</span>
             <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Venue</span>
           </a>
+          <a class="group grid grid-cols-1 grid-rows-1 place-items-center" href="./sponsors.html#">
+            <span class="invisible col-start-1 row-start-1 font-semibold">Sponsors</span>
+            <span class="font-regular col-start-1 row-start-1 transition-all group-hover:font-medium">Sponsors</span>
+          </a>
         </div>
 
         <button
@@ -153,8 +156,8 @@
         <a class="hover:font-medium transition-all" href="./program.html#">Program</a>
         <a class="hover:font-medium transition-all" href="./registration.html#">Registration</a>
         <a class="hover:font-medium transition-all" href="./venue.html#">Venue</a>
-        <!-- <a class="hover:font-medium transition-all" href="./#">Sponsors</a>
-        <a class="hover:font-medium transition-all" href="./#">Travel Grant</a> -->
+        <a class="hover:font-medium transition-all" href="./sponsors.html#">Sponsors</a>
+        <!-- <a class="hover:font-medium transition-all" href="./#">Travel Grant</a> -->
       </div>
     </aside>
 
@@ -190,12 +193,86 @@
           class="animate-fade-in mx-auto max-w-175 px-7.5 text-[19px]/[28px] text-[#010101] scroll-mt-30 opacity-0 [animation-delay:0.3s]"
           id="content"
         >
-          <p class="mb-6">Placeholder</p>
+          <p class="mb-15 text-center">The ISE 2026 meeting is supported by the following partners:</p>
+
+          <ul class="flex flex-col items-center gap-18 w-full">
+            <li class="flex flex-col items-center w-full max-w-sm">
+              <div class="h-28 w-full flex items-center justify-center p-4">
+                <img
+                  class="max-w-full max-h-full object-contain"
+                  src="./images/sponsors-logos/ostrava-logo.png"
+                  alt="Statutory City of Ostrava logo"
+                />
+              </div>
+
+              <p class="mt-6 text-center">Statutory City of Ostrava</p>
+            </li>
+
+            <li class="flex flex-col items-center w-full max-w-sm">
+              <div class="h-28 w-full flex items-center justify-center p-4">
+                <img
+                  class="max-w-full max-h-full object-contain"
+                  src="./images/sponsors-logos/faculty-of-science-logo.png"
+                  alt="Faculty of Science, University of Ostrava logo"
+                />
+              </div>
+
+              <p class="mt-6 text-center">Faculty of Science, University of Ostrava</p>
+            </li>
+
+            <li class="flex flex-col items-center w-full max-w-sm">
+              <div class="h-28 w-full flex items-center justify-center p-4">
+                <img
+                  class="max-w-full max-h-full object-contain"
+                  src="./images/sponsors-logos/vwr-logo.png"
+                  alt="VWR, part of Avantor logo"
+                />
+              </div>
+
+              <p class="mt-6 text-center">VWR, part of Avantor</p>
+            </li>
+
+            <li class="flex flex-col items-center w-full max-w-sm">
+              <div class="h-28 w-full flex items-center justify-center p-4">
+                <img
+                  class="max-w-full max-h-full object-contain"
+                  src="./images/sponsors-logos/schoeller-instruments-logo.png"
+                  alt="SCHOELLER INSTRUMENTS, s.r.o. logo"
+                />
+              </div>
+
+              <p class="mt-6 text-center">SCHOELLER INSTRUMENTS, s.r.o.</p>
+            </li>
+
+            <li class="flex flex-col items-center w-full max-w-sm">
+              <div class="h-28 w-full flex items-center justify-center p-4">
+                <img
+                  class="max-w-full max-h-full object-contain"
+                  src="./images/sponsors-logos/elisabeth-pharmacon-logo.png"
+                  alt="ELISABETH PHARMACON, spol. s r. o. logo"
+                />
+              </div>
+
+              <p class="mt-6 text-center">ELISABETH PHARMACON, spol. s r. o.</p>
+            </li>
+
+            <li class="flex flex-col items-center w-full max-w-sm">
+              <div class="h-28 w-full flex items-center justify-center p-4">
+                <img
+                  class="max-w-full max-h-full object-contain"
+                  src="./images/sponsors-logos/delong-instruments-logo.png"
+                  alt="DELONG INSTRUMENTS a.s. logo"
+                />
+              </div>
+
+              <p class="mt-6 text-center">DELONG INSTRUMENTS a.s.</p>
+            </li>
+          </ul>
         </article>
       </div>
 
       <footer class="bg-[#F0F4F9]">
-        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[28px] text-[#40577B]">
+        <div class="flex max-w-175 mx-auto h-full py-10 px-7.5 justify-between text-[16px]/[24px] text-[#40577B]">
           <div class="w-40 md:w-32.5">
             <p>Stay tuned!</p>
           </div>
@@ -205,6 +282,7 @@
               <li><a class="transition-colors hover:text-[#00B497]" href="./program.html#">Program</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./registration.html#">Registration</a></li>
               <li><a class="transition-colors hover:text-[#00B497]" href="./venue.html#">Venue</a></li>
+              <li><a class="transition-colors hover:text-[#00B497]" href="./sponsors.html#">Sponsors</a></li>
             </ul>
           </div>
         </div>
