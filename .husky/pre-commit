@@ -1,4 +1,4 @@
 npm run format
 npm run lint
 npm run build
-git add -u
+git add src/output.css
