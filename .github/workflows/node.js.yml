@@ -33,8 +33,11 @@ jobs:
       - name: Build Tailwind CSS
         run: npm run build
 
-      - name: Add public files to Pages artifact
-        run: cp -r ./public/. ./src/
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p ./dist-pages
+          cp -r ./src/. ./dist-pages/
+          cp -r ./public/. ./dist-pages/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -42,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './src'
+          path: './dist-pages'
 
       - name: Deploy to GitHub Pages
         id: deployment
