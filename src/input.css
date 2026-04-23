@@ -122,7 +122,10 @@
   }
 
   .figure-caption {
-    @apply text-center text-[12px]/[18px] italic;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    font-style: italic;
     color: var(--color-text-muted);
   }
 }
