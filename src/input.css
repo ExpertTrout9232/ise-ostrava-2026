@@ -18,6 +18,8 @@
 
 @theme {
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-text-primary: #010101;
+  --color-surface-primary: #fff;
 
   --breakpoint-md: 688px;
 
@@ -80,8 +82,8 @@
     font-family: var(--font-sans);
     font-size: 19px;
     line-height: 28px;
-    color: #010101;
-    background-color: #fff;
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-primary);
   }
 }
 
@@ -91,7 +93,7 @@
   }
 
   .article-content {
-    @apply animate-fade-in mx-auto max-w-175 px-7.5 scroll-mt-30 opacity-0 [animation-delay:0.3s];
+    @apply animate-fade-in mx-auto max-w-175 scroll-mt-30 px-7.5 opacity-0 [animation-delay:0.3s];
   }
 
   .article-section {
@@ -119,6 +121,6 @@
   }
 
   .figure-caption {
-    @apply text-[12px]/[18px] text-gray-600 italic text-center;
+    @apply text-center text-[12px]/[18px] text-gray-600 italic;
   }
 }
