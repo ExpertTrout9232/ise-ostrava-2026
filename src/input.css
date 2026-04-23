@@ -19,6 +19,7 @@
 @theme {
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --color-text-primary: #010101;
+  --color-text-muted: #4b5563;
   --color-surface-primary: #fff;
 
   --breakpoint-md: 688px;
@@ -121,6 +122,7 @@
   }
 
   .figure-caption {
-    @apply text-center text-[12px]/[18px] text-gray-600 italic;
+    @apply text-center text-[12px]/[18px] italic;
+    color: var(--color-text-muted);
   }
 }
