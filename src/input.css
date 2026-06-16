@@ -76,3 +76,24 @@
     scrollbar-gutter: stable;
   }
 }
+
+@layer components {
+  .site-notification-card {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 280ms ease,
+      transform 280ms ease;
+    will-change: opacity, transform;
+  }
+
+  .site-notification-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .site-notification-card.is-leaving {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
