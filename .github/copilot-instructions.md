@@ -39,9 +39,11 @@
 - Even if you stage only source files first, pre-commit will rebuild and add `src/output.css`.
 
 ## Required quality checks before finishing changes
-Run (in this order):
-1. `npm run lint`
-2. `npm run build`
+- For cloud agents and automated CI, run checks in this order:
+  1. `npm run lint`
+  2. `npm run build`
+
+- For interactive chat agents, do not run build or lint steps here; make the requested edits and let the cloud workflow or CI handle validation.
 
 Notes:
 - There is no dedicated test suite currently.
