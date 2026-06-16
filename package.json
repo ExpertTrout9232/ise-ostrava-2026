@@ -20,7 +20,7 @@
   },
   "scripts": {
     "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
-    "server": "live-server ./src --port=8080 --no-browser",
+    "server": "node scripts/dev-server.mjs",
     "dev": "concurrently \"npm run tailwind\" \"npm run server\"",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify",
     "predeploy": "npm run build",
